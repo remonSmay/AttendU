@@ -1,0 +1,49 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Media Files (Sensitive Data)
+src/media/faces/
+src/media/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Dependencies lock files (optional, uncomment if not using in version control)
+# package-lock.json
+# poetry.lock
+
+# OS
+.DS_Store
+Thumbs.db
