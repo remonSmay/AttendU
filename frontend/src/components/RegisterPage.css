@@ -1,0 +1,48 @@
+.register-page .ui-auth-card {
+  max-width: 42rem;
+}
+
+.register-page .ui-auth-header {
+  gap: var(--space-5);
+}
+
+.register-page .ui-brand {
+  padding-bottom: var(--space-2);
+}
+
+.register-page .ui-auth-title {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.register-page .ui-auth-description {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.register-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.register-submit-row {
+  grid-column: 1 / -1;
+  padding-top: var(--space-2);
+}
+
+.register-page .ui-auth-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.register-page .ui-auth-footer a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 720px) {
+  .register-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

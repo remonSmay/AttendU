@@ -1,0 +1,120 @@
+.tsk {
+  overflow-x: auto;
+  border-radius: inherit;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tsk__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 36rem;
+}
+
+.tsk__head-row {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tsk__th {
+  padding: 0.9rem 1.25rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.tsk__row {
+  border-bottom: 1px solid var(--color-border);
+  animation: tsk-fade-in 0.3s var(--ease-out-circ) both;
+}
+
+.tsk__row:last-child {
+  border-bottom: none;
+}
+
+.tsk__td {
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+}
+
+/* Compound first cell: avatar + two lines */
+.tsk__cell-compound {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tsk__avatar {
+  width: 2.375rem !important;
+  height: 2.375rem !important;
+  border-radius: var(--radius-xl) !important;
+  flex-shrink: 0;
+}
+
+.tsk__cell-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 1;
+}
+
+.tsk__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.tsk__btn-placeholder {
+  width: 3.5rem !important;
+  height: 2.25rem !important;
+  border-radius: var(--radius-md) !important;
+}
+
+/* Shimmer base */
+.tsk__shimmer {
+  display: inline-block;
+  height: 0.875rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.tsk__shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 100%
+  );
+  animation: tsk-shimmer 1.5s linear infinite;
+  transform: translateX(-100%);
+}
+
+@keyframes tsk-shimmer {
+  to { transform: translateX(200%); }
+}
+
+@keyframes tsk-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Light mode */
+html[data-theme="light"] .tsk__shimmer {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] .tsk__shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+}
+
+html[data-theme="light"] .tsk__th {
+  background: rgba(0, 0, 0, 0.02);
+}

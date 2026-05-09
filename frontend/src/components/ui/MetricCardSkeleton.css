@@ -1,0 +1,70 @@
+.mcs {
+  animation: fade-up 0.35s var(--ease-out-circ) both;
+}
+
+.mcs__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  flex-shrink: 0;
+}
+
+.mcs__copy {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.mcs__label {
+  width: 7rem;
+  height: 0.75rem;
+}
+
+.mcs__value {
+  width: 4rem;
+  height: 1.35rem;
+}
+
+/* Shimmer base shared */
+.mcs__shimmer {
+  display: block;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mcs__shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 100%
+  );
+  animation: mcs-shimmer 1.5s linear infinite;
+  transform: translateX(-100%);
+}
+
+.mcs__icon.mcs__shimmer {
+  border-radius: var(--radius-xl);
+}
+
+@keyframes mcs-shimmer {
+  to { transform: translateX(200%); }
+}
+
+/* Light mode */
+html[data-theme="light"] .mcs__shimmer {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] .mcs__shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+}

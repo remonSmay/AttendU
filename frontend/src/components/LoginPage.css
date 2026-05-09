@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════════════
+   Two-column split login layout
+   ═══════════════════════════════════════════════ */
+.login-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ─── LEFT panel ─────────────────────────────── */
+.login-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-9);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(77, 156, 255, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(34, 213, 235, 0.12) 0%, transparent 55%),
+    linear-gradient(160deg, #080e1f 0%, #0c1630 45%, #091428 100%);
+}
+
+/* Subtle grid overlay */
+.login-left__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(77, 156, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to right, rgba(77, 156, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* Brand area */
+.login-left__brand {
+  position: relative;
+  z-index: 10;
+}
+
+/* Scene (characters) */
+.login-left__scene {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1;
+  padding: var(--space-6) 0;
+}
+
+/* Footer links */
+.login-left__links {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+.login-left__links a {
+  color: rgba(221, 229, 244, 0.35);
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.login-left__links a:hover {
+  color: rgba(221, 229, 244, 0.75);
+}
+
+/* Ambient light blobs */
+.login-left__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.login-left__blob--a {
+  width: 22rem;
+  height: 22rem;
+  top: 15%;
+  right: -4rem;
+  background: rgba(77, 156, 255, 0.1);
+}
+
+.login-left__blob--b {
+  width: 30rem;
+  height: 30rem;
+  bottom: -6rem;
+  left: -6rem;
+  background: rgba(34, 213, 235, 0.07);
+}
+
+/* ─── RIGHT panel ────────────────────────────── */
+.login-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+.login-right__theme {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+}
+
+/* Mobile-only brand (hidden on desktop) */
+.login-right__mobile-brand {
+  display: none;
+  margin-bottom: var(--space-7);
+}
+
+/* Card sizing */
+.login-card {
+  width: min(100%, 28rem);
+}
+
+/* ─── Shared auth footer ─────────────────────── */
+.ui-auth-footer-inline {
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
+.ui-auth-footer-inline .ui-auth-description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.ui-auth-footer-inline a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.ui-auth-footer-inline a:hover {
+  opacity: 0.8;
+}
+
+/* ─── Light mode — left panel adjustments ─────── */
+html[data-theme="light"] .login-left {
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(43, 127, 224, 0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(15, 191, 214, 0.14) 0%, transparent 55%),
+    linear-gradient(160deg, #0d1f42 0%, #122050 45%, #0b1a3a 100%);
+}
+
+html[data-theme="light"] .login-right {
+  background: var(--color-bg);
+}
+
+/* ─── Responsive: mobile / tablet ──────────────
+   Below 1024px: hide left panel, full-width form
+   ═══════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .login-split {
+    grid-template-columns: 1fr;
+  }
+
+  .login-left {
+    display: none;
+  }
+
+  .login-right__mobile-brand {
+    display: block;
+  }
+
+  .login-right {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .login-card {
+    width: min(100%, 26rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-right {
+    padding: var(--space-5) var(--space-4);
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+
+  .login-right__theme {
+    top: var(--space-4);
+    right: var(--space-4);
+  }
+}

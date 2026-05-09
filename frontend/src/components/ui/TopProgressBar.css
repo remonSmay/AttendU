@@ -1,0 +1,56 @@
+.tpb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 3px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tpb__fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 60%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transform-origin: left center;
+  transition: none;
+  box-shadow: 0 0 10px rgba(77, 156, 255, 0.7), 0 0 4px rgba(34, 213, 235, 0.5);
+}
+
+/* Phase 1: expand to 85%, become visible */
+.tpb__fill--running {
+  width: 85%;
+  opacity: 1;
+  transition:
+    width 320ms cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 80ms ease;
+  animation: tpb-shimmer 1.2s linear infinite;
+}
+
+/* Phase 2: jump to 100% then fade out */
+.tpb__fill--done {
+  width: 100%;
+  opacity: 0;
+  transition:
+    width 120ms ease,
+    opacity 220ms ease 80ms;
+}
+
+@keyframes tpb-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Light mode: slightly softer glow */
+html[data-theme="light"] .tpb__fill {
+  box-shadow: 0 0 8px rgba(43, 127, 224, 0.5), 0 0 3px rgba(15, 191, 214, 0.4);
+}

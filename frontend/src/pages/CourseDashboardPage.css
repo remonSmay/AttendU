@@ -1,0 +1,39 @@
+.course-dashboard-overview {
+  display: grid;
+  gap: var(--space-6);
+  animation: fade-up 0.4s var(--ease-out-circ) both;
+}
+
+.course-dashboard-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.course-dashboard-chart-frame {
+  margin-top: var(--space-5);
+  min-height: 260px;
+}
+
+.course-dashboard-chart-empty {
+  margin-top: var(--space-5);
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .course-dashboard-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .course-dashboard-overview {
+    gap: var(--space-4);
+  }
+
+  .course-dashboard-chart-frame {
+    min-height: 200px;
+    margin-top: var(--space-4);
+  }
+}

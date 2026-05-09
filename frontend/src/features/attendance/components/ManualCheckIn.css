@@ -1,0 +1,208 @@
+.manual-checkin {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-2xl);
+  backdrop-filter: blur(12px);
+  animation: ui-fade-up 0.7s var(--ease-out-circ);
+}
+
+.manual-checkin-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.manual-checkin-kicker {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.manual-checkin-header h3 {
+  margin: 2px 0 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.manual-checkin-description {
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.manual-checkin-status {
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.manual-checkin-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.manual-checkin-field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.manual-checkin-input-wrap {
+  position: relative;
+}
+
+.manual-checkin-input-wrap input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-xl);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: all 0.2s var(--ease-out-quad);
+}
+
+.manual-checkin-input-wrap input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-soft);
+}
+
+.manual-checkin-spinner {
+  position: absolute;
+  top: 50%;
+  right: var(--space-4);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary-soft);
+  border-top-color: var(--color-primary);
+  transform: translateY(-50%);
+  animation: manual-spin 0.8s linear infinite;
+}
+
+.manual-checkin-status-text {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.manual-checkin-status-text.error {
+  color: var(--color-error);
+}
+
+.manual-checkin-results {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--color-border-glass);
+  max-height: 250px;
+  overflow: auto;
+}
+
+.manual-checkin-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out-quad);
+}
+
+.manual-checkin-result:hover:not(:disabled) {
+  transform: translateX(4px);
+  border-color: var(--color-primary-soft);
+  box-shadow: var(--elevation-1);
+}
+
+.manual-checkin-result:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.manual-checkin-result-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.manual-checkin-result-rfid {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.manual-checkin-empty {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.manual-checkin-toast {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--elevation-4);
+  z-index: 10;
+  animation: manual-toast-in 0.3s var(--ease-out-back);
+}
+
+.manual-checkin-toast.success {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.manual-checkin-toast.error {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+@keyframes manual-spin {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes manual-toast-in {
+  from { opacity: 0; transform: translateY(-10px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 600px) {
+  .manual-checkin-header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}
+

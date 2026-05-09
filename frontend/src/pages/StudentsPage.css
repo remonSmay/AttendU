@@ -1,0 +1,286 @@
+.students-page {
+  display: grid;
+  gap: var(--space-6);
+  animation: fade-up 0.4s var(--ease-out-circ) both;
+}
+
+/* ─── Toolbar ─────────────────────────────────────────────── */
+.students-page__toolbar {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.students-page__filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ─── Filter tabs ─────────────────────────────────────────── */
+.students-page__filter-tab {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.03);
+  color: var(--color-text-muted);
+  min-height: var(--touch-min);
+  padding: 0 var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease, background-color 160ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.students-page__filter-tab:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}
+
+.students-page__filter-tab:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+
+.students-page__filter-tab--active {
+  color: #ffffff;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  box-shadow: 0 8px 20px rgba(77, 156, 255, 0.25);
+}
+
+.students-page__filter-count {
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  padding: 0 var(--space-2);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+}
+
+.students-page__filter-tab:not(.students-page__filter-tab--active) .students-page__filter-count {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.students-page__results {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.students-page__header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* ─── Table shell ─────────────────────────────────────────── */
+.students-page__table-shell {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+  -webkit-overflow-scrolling: touch;
+}
+
+.students-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 42rem;
+}
+
+.students-page__table th,
+.students-page__table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.students-page__table th {
+  background: rgba(255,255,255,0.02);
+  text-align: left;
+  color: var(--color-text-muted);
+  position: sticky;
+  top: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.students-page__sort-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: color 150ms ease;
+  min-height: 2rem;
+}
+
+.students-page__sort-button:hover {
+  color: var(--color-text);
+}
+
+.students-page__sort-button--numeric {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.students-page__table-row {
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.students-page__table-row:hover {
+  background: rgba(77, 156, 255, 0.05);
+}
+
+.students-page__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ─── Student cell ────────────────────────────────────────── */
+.students-page__student-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.students-page__student-copy {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.students-page__student-copy strong {
+  font-size: 0.98rem;
+  color: var(--color-text);
+}
+
+.students-page__rfid {
+  color: var(--color-primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.students-page__avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-xl);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(77, 156, 255, 0.15), rgba(34, 213, 235, 0.2));
+  color: var(--color-primary);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  border: 1px solid rgba(77, 156, 255, 0.12);
+  transition: transform 150ms var(--ease-spring);
+}
+
+.students-page__table-row:hover .students-page__avatar {
+  transform: scale(1.05);
+}
+
+/* ─── Attendance cell ─────────────────────────────────────── */
+.students-page__attendance-cell {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.students-page__standing {
+  justify-self: start;
+}
+
+.students-page__standing--success {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.students-page__standing--warning {
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
+}
+
+.students-page__standing--danger {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+/* ─── Progress bar ────────────────────────────────────────── */
+.students-page__progress-track {
+  overflow: hidden;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+}
+
+.students-page__progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.6s var(--ease-out-expo);
+}
+
+.students-page__progress-fill--success {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.students-page__progress-fill--warning {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+}
+
+.students-page__progress-fill--danger {
+  background: linear-gradient(90deg, #dc2626, #f05252);
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .students-page__header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .students-page__table {
+    min-width: 36rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .students-page {
+    gap: var(--space-4);
+  }
+
+  .students-page__filters {
+    gap: var(--space-2);
+  }
+
+  .students-page__filter-tab {
+    font-size: 0.82rem;
+    padding: 0 var(--space-3);
+    min-height: 2.5rem;
+  }
+
+  .students-page__table-shell {
+    border-radius: var(--radius-xl);
+  }
+}
