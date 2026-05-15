@@ -442,13 +442,6 @@ export default function LoginPage({ onLogin, isLoading, error, onClearError }: L
           </div>
         </div>
 
-        {/* Footer links */}
-        <div className="login-left__links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Contact</a>
-        </div>
-
         {/* Decorative ambient blobs */}
         <div className="login-left__blob login-left__blob--a" aria-hidden="true" />
         <div className="login-left__blob login-left__blob--b" aria-hidden="true" />

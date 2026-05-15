@@ -1,0 +1,1158 @@
+{
+  "version": "1",
+  "pip_version": "25.1.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/d4/24/a372aaf5c9b7208e7112038812994107bc65a84cd00e0354a88c2c77a617/pytest-9.0.3-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=2c5efc453d45394fdd706ade797c0a81091eccd1d6e4bccfcd476e2b8e0ab5d9",
+          "hashes": {
+            "sha256": "2c5efc453d45394fdd706ade797c0a81091eccd1d6e4bccfcd476e2b8e0ab5d9"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pytest",
+        "version": "9.0.3",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "pytest: simple powerful testing with Python",
+        "description": ".. image:: https://github.com/pytest-dev/pytest/raw/main/doc/en/img/pytest_logo_curves.svg\n   :target: https://docs.pytest.org/en/stable/\n   :align: center\n   :height: 200\n   :alt: pytest\n\n\n------\n\n.. image:: https://img.shields.io/pypi/v/pytest.svg\n    :target: https://pypi.org/project/pytest/\n\n.. image:: https://img.shields.io/conda/vn/conda-forge/pytest.svg\n    :target: https://anaconda.org/conda-forge/pytest\n\n.. image:: https://img.shields.io/pypi/pyversions/pytest.svg\n    :target: https://pypi.org/project/pytest/\n\n.. image:: https://codecov.io/gh/pytest-dev/pytest/branch/main/graph/badge.svg\n    :target: https://codecov.io/gh/pytest-dev/pytest\n    :alt: Code coverage Status\n\n.. image:: https://github.com/pytest-dev/pytest/actions/workflows/test.yml/badge.svg\n    :target: https://github.com/pytest-dev/pytest/actions?query=workflow%3Atest\n\n.. image:: https://results.pre-commit.ci/badge/github/pytest-dev/pytest/main.svg\n   :target: https://results.pre-commit.ci/latest/github/pytest-dev/pytest/main\n   :alt: pre-commit.ci status\n\n.. image:: https://www.codetriage.com/pytest-dev/pytest/badges/users.svg\n    :target: https://www.codetriage.com/pytest-dev/pytest\n\n.. image:: https://readthedocs.org/projects/pytest/badge/?version=latest\n    :target: https://pytest.readthedocs.io/en/latest/?badge=latest\n    :alt: Documentation Status\n\n.. image:: https://img.shields.io/badge/Discord-pytest--dev-blue\n    :target: https://discord.com/invite/pytest-dev\n    :alt: Discord\n\n.. image:: https://img.shields.io/badge/Libera%20chat-%23pytest-orange\n    :target: https://web.libera.chat/#pytest\n    :alt: Libera chat\n\n\nThe ``pytest`` framework makes it easy to write small tests, yet\nscales to support complex functional testing for applications and libraries.\n\nAn example of a simple test:\n\n.. code-block:: python\n\n    # content of test_sample.py\n    def inc(x):\n        return x + 1\n\n\n    def test_answer():\n        assert inc(3) == 5\n\n\nTo execute it::\n\n    $ pytest\n    ============================= test session starts =============================\n    collected 1 items\n\n    test_sample.py F\n\n    ================================== FAILURES ===================================\n    _________________________________ test_answer _________________________________\n\n        def test_answer():\n    >       assert inc(3) == 5\n    E       assert 4 == 5\n    E        +  where 4 = inc(3)\n\n    test_sample.py:5: AssertionError\n    ========================== 1 failed in 0.04 seconds ===========================\n\n\nThanks to ``pytest``'s detailed assertion introspection, you can simply use plain ``assert`` statements. See `getting-started <https://docs.pytest.org/en/stable/getting-started.html#our-first-test-run>`_ for more examples.\n\n\nFeatures\n--------\n\n- Detailed info on failing `assert statements <https://docs.pytest.org/en/stable/how-to/assert.html>`_ (no need to remember ``self.assert*`` names)\n\n- `Auto-discovery\n  <https://docs.pytest.org/en/stable/explanation/goodpractices.html#python-test-discovery>`_\n  of test modules and functions\n\n- `Modular fixtures <https://docs.pytest.org/en/stable/explanation/fixtures.html>`_ for\n  managing small or parametrized long-lived test resources\n\n- Can run `unittest <https://docs.pytest.org/en/stable/how-to/unittest.html>`_ (or trial)\n  test suites out of the box\n\n- Python 3.10+ or PyPy3\n\n- Rich plugin architecture, with over 1300+ `external plugins <https://docs.pytest.org/en/latest/reference/plugin_list.html>`_ and thriving community\n\n\nDocumentation\n-------------\n\nFor full documentation, including installation, tutorials and PDF documents, please see https://docs.pytest.org/en/stable/.\n\n\nBugs/Requests\n-------------\n\nPlease use the `GitHub issue tracker <https://github.com/pytest-dev/pytest/issues>`_ to submit bugs or request features.\n\n\nChangelog\n---------\n\nConsult the `Changelog <https://docs.pytest.org/en/stable/changelog.html>`__ page for fixes and enhancements of each version.\n\n\nSupport pytest\n--------------\n\n`Open Collective`_ is an online funding platform for open and transparent communities.\nIt provides tools to raise money and share your finances in full transparency.\n\nIt is the platform of choice for individuals and companies that want to make one-time or\nmonthly donations directly to the project.\n\nSee more details in the `pytest collective`_.\n\n.. _Open Collective: https://opencollective.com\n.. _pytest collective: https://opencollective.com/pytest\n\n\npytest for enterprise\n---------------------\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of pytest and thousands of other packages are working with Tidelift to deliver commercial support and\nmaintenance for the open source dependencies you use to build your applications.\nSave time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use.\n\n`Learn more. <https://tidelift.com/subscription/pkg/pypi-pytest?utm_source=pypi-pytest&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_\n\nSecurity\n^^^^^^^^\n\npytest has never been associated with a security vulnerability, but in any case, to report a\nsecurity vulnerability please use the `Tidelift security contact <https://tidelift.com/security>`_.\nTidelift will coordinate the fix and disclosure.\n\n\nLicense\n-------\n\nCopyright Holger Krekel and others, 2004.\n\nDistributed under the terms of the `MIT`_ license, pytest is free and open source software.\n\n.. _`MIT`: https://github.com/pytest-dev/pytest/blob/main/LICENSE\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "test",
+          "unittest"
+        ],
+        "author": "Holger Krekel, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe, Brianna Laugher, Freya Bruhin, Others (See AUTHORS)",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 6 - Mature",
+          "Intended Audience :: Developers",
+          "Operating System :: MacOS",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Operating System :: Unix",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Testing",
+          "Topic :: Utilities"
+        ],
+        "requires_dist": [
+          "colorama>=0.4; sys_platform == \"win32\"",
+          "exceptiongroup>=1; python_version < \"3.11\"",
+          "iniconfig>=1.0.1",
+          "packaging>=22",
+          "pluggy<2,>=1.5",
+          "pygments>=2.7.2",
+          "tomli>=1; python_version < \"3.11\"",
+          "argcomplete; extra == \"dev\"",
+          "attrs>=19.2; extra == \"dev\"",
+          "hypothesis>=3.56; extra == \"dev\"",
+          "mock; extra == \"dev\"",
+          "requests; extra == \"dev\"",
+          "setuptools; extra == \"dev\"",
+          "xmlschema; extra == \"dev\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Changelog, https://docs.pytest.org/en/stable/changelog.html",
+          "Contact, https://docs.pytest.org/en/stable/contact.html",
+          "Funding, https://docs.pytest.org/en/stable/sponsor.html",
+          "Homepage, https://docs.pytest.org/en/latest/",
+          "Source, https://github.com/pytest-dev/pytest",
+          "Tracker, https://github.com/pytest-dev/pytest/issues"
+        ],
+        "provides_extra": [
+          "dev"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+          "hashes": {
+            "sha256": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pluggy",
+        "version": "1.6.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "plugin and hook calling mechanisms for python",
+        "description": "====================================================\npluggy - A minimalist production ready plugin system\n====================================================\n\n|pypi| |conda-forge| |versions| |github-actions| |gitter| |black| |codecov|\n\nThis is the core framework used by the `pytest`_, `tox`_, and `devpi`_ projects.\n\nPlease `read the docs`_ to learn more!\n\nA definitive example\n====================\n.. code-block:: python\n\n    import pluggy\n\n    hookspec = pluggy.HookspecMarker(\"myproject\")\n    hookimpl = pluggy.HookimplMarker(\"myproject\")\n\n\n    class MySpec:\n        \"\"\"A hook specification namespace.\"\"\"\n\n        @hookspec\n        def myhook(self, arg1, arg2):\n            \"\"\"My special little hook that you can customize.\"\"\"\n\n\n    class Plugin_1:\n        \"\"\"A hook implementation namespace.\"\"\"\n\n        @hookimpl\n        def myhook(self, arg1, arg2):\n            print(\"inside Plugin_1.myhook()\")\n            return arg1 + arg2\n\n\n    class Plugin_2:\n        \"\"\"A 2nd hook implementation namespace.\"\"\"\n\n        @hookimpl\n        def myhook(self, arg1, arg2):\n            print(\"inside Plugin_2.myhook()\")\n            return arg1 - arg2\n\n\n    # create a manager and add the spec\n    pm = pluggy.PluginManager(\"myproject\")\n    pm.add_hookspecs(MySpec)\n\n    # register plugins\n    pm.register(Plugin_1())\n    pm.register(Plugin_2())\n\n    # call our ``myhook`` hook\n    results = pm.hook.myhook(arg1=1, arg2=2)\n    print(results)\n\n\nRunning this directly gets us::\n\n    $ python docs/examples/toy-example.py\n    inside Plugin_2.myhook()\n    inside Plugin_1.myhook()\n    [-1, 3]\n\n\n.. badges\n\n.. |pypi| image:: https://img.shields.io/pypi/v/pluggy.svg\n    :target: https://pypi.org/pypi/pluggy\n\n.. |versions| image:: https://img.shields.io/pypi/pyversions/pluggy.svg\n    :target: https://pypi.org/pypi/pluggy\n\n.. |github-actions| image:: https://github.com/pytest-dev/pluggy/workflows/main/badge.svg\n    :target: https://github.com/pytest-dev/pluggy/actions\n\n.. |conda-forge| image:: https://img.shields.io/conda/vn/conda-forge/pluggy.svg\n    :target: https://anaconda.org/conda-forge/pytest\n\n.. |gitter| image:: https://badges.gitter.im/pytest-dev/pluggy.svg\n    :alt: Join the chat at https://gitter.im/pytest-dev/pluggy\n    :target: https://gitter.im/pytest-dev/pluggy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\n\n.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/ambv/black\n\n.. |codecov| image:: https://codecov.io/gh/pytest-dev/pluggy/branch/master/graph/badge.svg\n    :target: https://codecov.io/gh/pytest-dev/pluggy\n    :alt: Code coverage Status\n\n.. links\n.. _pytest:\n    http://pytest.org\n.. _tox:\n    https://tox.readthedocs.org\n.. _devpi:\n    http://doc.devpi.net\n.. _read the docs:\n   https://pluggy.readthedocs.io/en/latest/\n\n\nSupport pluggy\n--------------\n\n`Open Collective`_ is an online funding platform for open and transparent communities.\nIt provides tools to raise money and share your finances in full transparency.\n\nIt is the platform of choice for individuals and companies that want to make one-time or\nmonthly donations directly to the project.\n\n``pluggy`` is part of the ``pytest-dev`` project, see more details in the `pytest collective`_.\n\n.. _Open Collective: https://opencollective.com\n.. _pytest collective: https://opencollective.com/pytest\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Holger Krekel <holger@merlinux.eu>",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 6 - Mature",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: POSIX",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: MacOS :: MacOS X",
+          "Topic :: Software Development :: Testing",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Utilities",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13"
+        ],
+        "requires_dist": [
+          "pre-commit; extra == \"dev\"",
+          "tox; extra == \"dev\"",
+          "pytest; extra == \"testing\"",
+          "pytest-benchmark; extra == \"testing\"",
+          "coverage; extra == \"testing\""
+        ],
+        "requires_python": ">=3.9",
+        "provides_extra": [
+          "dev",
+          "testing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/e5/35/f8b19922b6a25bc0880171a2f1a003eaeb93657475193ab516fd87cac9da/pytest_asyncio-1.3.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=611e26147c7f77640e6d0a92a38ed17c3e9848063698d5c93d5aa7aa11cebff5",
+          "hashes": {
+            "sha256": "611e26147c7f77640e6d0a92a38ed17c3e9848063698d5c93d5aa7aa11cebff5"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pytest-asyncio",
+        "version": "1.3.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Pytest support for asyncio",
+        "description": "pytest-asyncio\n==============\n\n.. image:: https://img.shields.io/pypi/v/pytest-asyncio.svg\n    :target: https://pypi.python.org/pypi/pytest-asyncio\n.. image:: https://github.com/pytest-dev/pytest-asyncio/workflows/CI/badge.svg\n    :target: https://github.com/pytest-dev/pytest-asyncio/actions?workflow=CI\n.. image:: https://codecov.io/gh/pytest-dev/pytest-asyncio/branch/main/graph/badge.svg\n    :target: https://codecov.io/gh/pytest-dev/pytest-asyncio\n.. image:: https://img.shields.io/pypi/pyversions/pytest-asyncio.svg\n    :target: https://github.com/pytest-dev/pytest-asyncio\n    :alt: Supported Python versions\n.. image:: https://img.shields.io/badge/Matrix-%23pytest--asyncio-brightgreen\n    :alt: Matrix chat room: #pytest-asyncio\n    :target: https://matrix.to/#/#pytest-asyncio:matrix.org\n\n`pytest-asyncio <https://pytest-asyncio.readthedocs.io/en/latest/>`_ is a `pytest <https://docs.pytest.org/en/latest/contents.html>`_ plugin. It facilitates testing of code that uses the `asyncio <https://docs.python.org/3/library/asyncio.html>`_ library.\n\nSpecifically, pytest-asyncio provides support for coroutines as test functions. This allows users to *await* code inside their tests. For example, the following code is executed as a test item by pytest:\n\n.. code-block:: python\n\n    @pytest.mark.asyncio\n    async def test_some_asyncio_code():\n        res = await library.do_something()\n        assert b\"expected result\" == res\n\nMore details can be found in the `documentation <https://pytest-asyncio.readthedocs.io/en/latest/>`_.\n\nNote that test classes subclassing the standard `unittest <https://docs.python.org/3/library/unittest.html>`__ library are not supported. Users\nare advised to use `unittest.IsolatedAsyncioTestCase <https://docs.python.org/3/library/unittest.html#unittest.IsolatedAsyncioTestCase>`__\nor an async framework such as `asynctest <https://asynctest.readthedocs.io/en/latest>`__.\n\n\npytest-asyncio is available under the `Apache License 2.0 <https://github.com/pytest-dev/pytest-asyncio/blob/main/LICENSE>`_.\n\n\nInstallation\n------------\n\nTo install pytest-asyncio, simply:\n\n.. code-block:: bash\n\n    $ pip install pytest-asyncio\n\nThis is enough for pytest to pick up pytest-asyncio.\n\n\nContributing\n------------\nContributions are very welcome. Tests can be run with ``tox``, please ensure\nthe coverage at least stays the same before you submit a pull request.\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Tin Tvrtković <tinchester@gmail.com>",
+        "maintainer_email": "Michael Seifert <m.seifert@digitalernachschub.de>",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Framework :: AsyncIO",
+          "Framework :: Pytest",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Topic :: Software Development :: Testing",
+          "Typing :: Typed"
+        ],
+        "requires_dist": [
+          "backports-asyncio-runner<2,>=1.1; python_version < \"3.11\"",
+          "pytest<10,>=8.2",
+          "typing-extensions>=4.12; python_version < \"3.13\"",
+          "sphinx>=5.3; extra == \"docs\"",
+          "sphinx-rtd-theme>=1; extra == \"docs\"",
+          "coverage>=6.2; extra == \"testing\"",
+          "hypothesis>=5.7.1; extra == \"testing\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Bug Tracker, https://github.com/pytest-dev/pytest-asyncio/issues",
+          "Changelog, https://pytest-asyncio.readthedocs.io/en/latest/reference/changelog.html",
+          "Documentation, https://pytest-asyncio.readthedocs.io",
+          "Homepage, https://github.com/pytest-dev/pytest-asyncio",
+          "Source Code, https://github.com/pytest-dev/pytest-asyncio"
+        ],
+        "provides_extra": [
+          "docs",
+          "testing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/5a/cc/06253936f4a7fa2e0f48dfe6d851d9c56df896a9ab09ac019d70b760619c/pytest_mock-3.15.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=0a25e2eb88fe5168d535041d09a4529a188176ae608a6d249ee65abc0949630d",
+          "hashes": {
+            "sha256": "0a25e2eb88fe5168d535041d09a4529a188176ae608a6d249ee65abc0949630d"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pytest-mock",
+        "version": "3.15.1",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Thin-wrapper around the mock package for easier use with pytest",
+        "description": "===========\npytest-mock\n===========\n\nThis plugin provides a ``mocker`` fixture which is a thin-wrapper around the patching API\nprovided by the `mock package <http://pypi.python.org/pypi/mock>`_:\n\n.. code-block:: python\n\n    import os\n\n    class UnixFS:\n\n        @staticmethod\n        def rm(filename):\n            os.remove(filename)\n\n    def test_unix_fs(mocker):\n        mocker.patch('os.remove')\n        UnixFS.rm('file')\n        os.remove.assert_called_once_with('file')\n\n\nBesides undoing the mocking automatically after the end of the test, it also provides other\nnice utilities such as ``spy`` and ``stub``, and uses pytest introspection when\ncomparing calls.\n\n|python| |version| |anaconda| |docs| |ci| |coverage| |black| |pre-commit|\n\n.. |version| image:: http://img.shields.io/pypi/v/pytest-mock.svg\n  :target: https://pypi.python.org/pypi/pytest-mock\n\n.. |anaconda| image:: https://img.shields.io/conda/vn/conda-forge/pytest-mock.svg\n    :target: https://anaconda.org/conda-forge/pytest-mock\n\n.. |ci| image:: https://github.com/pytest-dev/pytest-mock/workflows/test/badge.svg\n  :target: https://github.com/pytest-dev/pytest-mock/actions\n\n.. |coverage| image:: https://coveralls.io/repos/github/pytest-dev/pytest-mock/badge.svg?branch=master\n  :target: https://coveralls.io/github/pytest-dev/pytest-mock?branch=master\n\n.. |python| image:: https://img.shields.io/pypi/pyversions/pytest-mock.svg\n  :target: https://pypi.python.org/pypi/pytest-mock/\n\n.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg\n  :target: https://github.com/ambv/black\n\n.. |pre-commit| image:: https://results.pre-commit.ci/badge/github/pytest-dev/pytest-mock/master.svg\n   :target: https://results.pre-commit.ci/latest/github/pytest-dev/pytest-mock/master\n\n.. |docs| image:: https://readthedocs.org/projects/pytest-mock/badge/?version=latest\n   :target: https://pytest-mock.readthedocs.io/en/latest/?badge=latest\n\n\n`Professionally supported pytest-mock is available <https://tidelift.com/subscription/pkg/pypi-pytest_mock?utm_source=pypi-pytest-mock&utm_medium=referral&utm_campaign=readme>`_.\n\n\nDocumentation\n=============\n\nFor full documentation, please see https://pytest-mock.readthedocs.io/en/latest.\n\nLicense\n=======\n\nDistributed under the terms of the `MIT`_ license.\n\n\n.. _MIT: https://github.com/pytest-dev/pytest-mock/blob/master/LICENSE\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "pytest",
+          "mock"
+        ],
+        "author_email": "Bruno Oliveira <nicoddemus@gmail.com>",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Framework :: Pytest",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Topic :: Software Development :: Testing"
+        ],
+        "requires_dist": [
+          "pytest>=6.2.5",
+          "pre-commit; extra == \"dev\"",
+          "pytest-asyncio; extra == \"dev\"",
+          "tox; extra == \"dev\""
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Homepage, https://github.com/pytest-dev/pytest-mock/",
+          "Documentation, https://pytest-mock.readthedocs.io/en/latest/",
+          "Changelog, https://pytest-mock.readthedocs.io/en/latest/changelog.html",
+          "Source, https://github.com/pytest-dev/pytest-mock/",
+          "Tracker, https://github.com/pytest-dev/pytest-mock/issues"
+        ],
+        "provides_extra": [
+          "dev"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad",
+          "hashes": {
+            "sha256": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.3",
+        "name": "httpx",
+        "version": "0.28.1",
+        "summary": "The next generation HTTP client.",
+        "description": "<p align=\"center\">\n  <a href=\"https://www.python-httpx.org/\"><img width=\"350\" height=\"208\" src=\"https://raw.githubusercontent.com/encode/httpx/master/docs/img/butterfly.png\" alt='HTTPX'></a>\n</p>\n\n<p align=\"center\"><strong>HTTPX</strong> <em>- A next-generation HTTP client for Python.</em></p>\n\n<p align=\"center\">\n<a href=\"https://github.com/encode/httpx/actions\">\n    <img src=\"https://github.com/encode/httpx/workflows/Test%20Suite/badge.svg\" alt=\"Test Suite\">\n</a>\n<a href=\"https://pypi.org/project/httpx/\">\n    <img src=\"https://badge.fury.io/py/httpx.svg\" alt=\"Package version\">\n</a>\n</p>\n\nHTTPX is a fully featured HTTP client library for Python 3. It includes **an integrated command line client**, has support for both **HTTP/1.1 and HTTP/2**, and provides both **sync and async APIs**.\n\n---\n\nInstall HTTPX using pip:\n\n```shell\n$ pip install httpx\n```\n\nNow, let's get started:\n\n```pycon\n>>> import httpx\n>>> r = httpx.get('https://www.example.org/')\n>>> r\n<Response [200 OK]>\n>>> r.status_code\n200\n>>> r.headers['content-type']\n'text/html; charset=UTF-8'\n>>> r.text\n'<!doctype html>\\n<html>\\n<head>\\n<title>Example Domain</title>...'\n```\n\nOr, using the command-line client.\n\n```shell\n$ pip install 'httpx[cli]'  # The command line client is an optional dependency.\n```\n\nWhich now allows us to use HTTPX directly from the command-line...\n\n<p align=\"center\">\n  <img width=\"700\" src=\"https://raw.githubusercontent.com/encode/httpx/master/docs/img/httpx-help.png\" alt='httpx --help'>\n</p>\n\nSending a request...\n\n<p align=\"center\">\n  <img width=\"700\" src=\"https://raw.githubusercontent.com/encode/httpx/master/docs/img/httpx-request.png\" alt='httpx http://httpbin.org/json'>\n</p>\n\n## Features\n\nHTTPX builds on the well-established usability of `requests`, and gives you:\n\n* A broadly [requests-compatible API](https://www.python-httpx.org/compatibility/).\n* An integrated command-line client.\n* HTTP/1.1 [and HTTP/2 support](https://www.python-httpx.org/http2/).\n* Standard synchronous interface, but with [async support if you need it](https://www.python-httpx.org/async/).\n* Ability to make requests directly to [WSGI applications](https://www.python-httpx.org/advanced/transports/#wsgi-transport) or [ASGI applications](https://www.python-httpx.org/advanced/transports/#asgi-transport).\n* Strict timeouts everywhere.\n* Fully type annotated.\n* 100% test coverage.\n\nPlus all the standard features of `requests`...\n\n* International Domains and URLs\n* Keep-Alive & Connection Pooling\n* Sessions with Cookie Persistence\n* Browser-style SSL Verification\n* Basic/Digest Authentication\n* Elegant Key/Value Cookies\n* Automatic Decompression\n* Automatic Content Decoding\n* Unicode Response Bodies\n* Multipart File Uploads\n* HTTP(S) Proxy Support\n* Connection Timeouts\n* Streaming Downloads\n* .netrc Support\n* Chunked Requests\n\n## Installation\n\nInstall with pip:\n\n```shell\n$ pip install httpx\n```\n\nOr, to include the optional HTTP/2 support, use:\n\n```shell\n$ pip install httpx[http2]\n```\n\nHTTPX requires Python 3.8+.\n\n## Documentation\n\nProject documentation is available at [https://www.python-httpx.org/](https://www.python-httpx.org/).\n\nFor a run-through of all the basics, head over to the [QuickStart](https://www.python-httpx.org/quickstart/).\n\nFor more advanced topics, see the [Advanced Usage](https://www.python-httpx.org/advanced/) section, the [async support](https://www.python-httpx.org/async/) section, or the [HTTP/2](https://www.python-httpx.org/http2/) section.\n\nThe [Developer Interface](https://www.python-httpx.org/api/) provides a comprehensive API reference.\n\nTo find out about tools that integrate with HTTPX, see [Third Party Packages](https://www.python-httpx.org/third_party_packages/).\n\n## Contribute\n\nIf you want to contribute with HTTPX check out the [Contributing Guide](https://www.python-httpx.org/contributing/) to learn how to start.\n\n## Dependencies\n\nThe HTTPX project relies on these excellent libraries:\n\n* `httpcore` - The underlying transport implementation for `httpx`.\n  * `h11` - HTTP/1.1 support.\n* `certifi` - SSL certificates.\n* `idna` - Internationalized domain name support.\n* `sniffio` - Async library autodetection.\n\nAs well as these optional installs:\n\n* `h2` - HTTP/2 support. *(Optional, with `httpx[http2]`)*\n* `socksio` - SOCKS proxy support. *(Optional, with `httpx[socks]`)*\n* `rich` - Rich terminal support. *(Optional, with `httpx[cli]`)*\n* `click` - Command line client support. *(Optional, with `httpx[cli]`)*\n* `brotli` or `brotlicffi` - Decoding for \"brotli\" compressed responses. *(Optional, with `httpx[brotli]`)*\n* `zstandard` - Decoding for \"zstd\" compressed responses. *(Optional, with `httpx[zstd]`)*\n\nA huge amount of credit is due to `requests` for the API layout that\nmuch of this work follows, as well as to `urllib3` for plenty of design\ninspiration around the lower-level networking details.\n\n---\n\n<p align=\"center\"><i>HTTPX is <a href=\"https://github.com/encode/httpx/blob/master/LICENSE.md\">BSD licensed</a> code.<br/>Designed & crafted with care.</i><br/>&mdash; 🦋 &mdash;</p>\n\n## Release Information\n\n### Fixed\n\n* Reintroduced supposedly-private `URLTypes` shortcut. (#2673)\n\n\n---\n\n[Full changelog](https://github.com/encode/httpx/blob/master/CHANGELOG.md)\n",
+        "description_content_type": "text/markdown",
+        "author_email": "Tom Christie <tom@tomchristie.com>",
+        "license": "BSD-3-Clause",
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Environment :: Web Environment",
+          "Framework :: AsyncIO",
+          "Framework :: Trio",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: BSD License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Topic :: Internet :: WWW/HTTP"
+        ],
+        "requires_dist": [
+          "anyio",
+          "certifi",
+          "httpcore==1.*",
+          "idna",
+          "brotli; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+          "brotlicffi; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+          "click==8.*; extra == 'cli'",
+          "pygments==2.*; extra == 'cli'",
+          "rich<14,>=10; extra == 'cli'",
+          "h2<5,>=3; extra == 'http2'",
+          "socksio==1.*; extra == 'socks'",
+          "zstandard>=0.18.0; extra == 'zstd'"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Changelog, https://github.com/encode/httpx/blob/master/CHANGELOG.md",
+          "Documentation, https://www.python-httpx.org",
+          "Homepage, https://github.com/encode/httpx",
+          "Source, https://github.com/encode/httpx"
+        ],
+        "provides_extra": [
+          "brotli",
+          "cli",
+          "http2",
+          "socks",
+          "zstd"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55",
+          "hashes": {
+            "sha256": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "httpcore",
+        "version": "1.0.9",
+        "summary": "A minimal low-level HTTP client.",
+        "description": "# HTTP Core\n\n[![Test Suite](https://github.com/encode/httpcore/workflows/Test%20Suite/badge.svg)](https://github.com/encode/httpcore/actions)\n[![Package version](https://badge.fury.io/py/httpcore.svg)](https://pypi.org/project/httpcore/)\n\n> *Do one thing, and do it well.*\n\nThe HTTP Core package provides a minimal low-level HTTP client, which does\none thing only. Sending HTTP requests.\n\nIt does not provide any high level model abstractions over the API,\ndoes not handle redirects, multipart uploads, building authentication headers,\ntransparent HTTP caching, URL parsing, session cookie handling,\ncontent or charset decoding, handling JSON, environment based configuration\ndefaults, or any of that Jazz.\n\nSome things HTTP Core does do:\n\n* Sending HTTP requests.\n* Thread-safe / task-safe connection pooling.\n* HTTP(S) proxy & SOCKS proxy support.\n* Supports HTTP/1.1 and HTTP/2.\n* Provides both sync and async interfaces.\n* Async backend support for `asyncio` and `trio`.\n\n## Requirements\n\nPython 3.8+\n\n## Installation\n\nFor HTTP/1.1 only support, install with:\n\n```shell\n$ pip install httpcore\n```\n\nThere are also a number of optional extras available...\n\n```shell\n$ pip install httpcore['asyncio,trio,http2,socks']\n```\n\n## Sending requests\n\nSend an HTTP request:\n\n```python\nimport httpcore\n\nresponse = httpcore.request(\"GET\", \"https://www.example.com/\")\n\nprint(response)\n# <Response [200]>\nprint(response.status)\n# 200\nprint(response.headers)\n# [(b'Accept-Ranges', b'bytes'), (b'Age', b'557328'), (b'Cache-Control', b'max-age=604800'), ...]\nprint(response.content)\n# b'<!doctype html>\\n<html>\\n<head>\\n<title>Example Domain</title>\\n\\n<meta charset=\"utf-8\"/>\\n ...'\n```\n\nThe top-level `httpcore.request()` function is provided for convenience. In practice whenever you're working with `httpcore` you'll want to use the connection pooling functionality that it provides.\n\n```python\nimport httpcore\n\nhttp = httpcore.ConnectionPool()\nresponse = http.request(\"GET\", \"https://www.example.com/\")\n```\n\nOnce you're ready to get going, [head over to the documentation](https://www.encode.io/httpcore/).\n\n## Motivation\n\nYou *probably* don't want to be using HTTP Core directly. It might make sense if\nyou're writing something like a proxy service in Python, and you just want\nsomething at the lowest possible level, but more typically you'll want to use\na higher level client library, such as `httpx`.\n\nThe motivation for `httpcore` is:\n\n* To provide a reusable low-level client library, that other packages can then build on top of.\n* To provide a *really clear interface split* between the networking code and client logic,\n  so that each is easier to understand and reason about in isolation.\n\n## Dependencies\n\nThe `httpcore` package has the following dependencies...\n\n* `h11`\n* `certifi`\n\nAnd the following optional extras...\n\n* `anyio` - Required by `pip install httpcore['asyncio']`.\n* `trio` - Required by `pip install httpcore['trio']`.\n* `h2` - Required by `pip install httpcore['http2']`.\n* `socksio` - Required by `pip install httpcore['socks']`.\n\n## Versioning\n\nWe use [SEMVER for our versioning policy](https://semver.org/).\n\nFor changes between package versions please see our [project changelog](CHANGELOG.md).\n\nWe recommend pinning your requirements either the most current major version, or a more specific version range:\n\n```python\npip install 'httpcore==1.*'\n```\n# Changelog\n\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).\n\n## Version 1.0.9 (April 24th, 2025)\n\n- Resolve https://github.com/advisories/GHSA-vqfr-h8mv-ghfj with h11 dependency update. (#1008)\n\n## Version 1.0.8 (April 11th, 2025)\n\n- Fix `AttributeError` when importing on Python 3.14. (#1005)\n\n## Version 1.0.7 (November 15th, 2024)\n\n- Support `proxy=…` configuration on `ConnectionPool()`. (#974)\n\n## Version 1.0.6 (October 1st, 2024)\n\n- Relax `trio` dependency pinning. (#956)\n- Handle `trio` raising `NotImplementedError` on unsupported platforms. (#955)\n- Handle mapping `ssl.SSLError` to `httpcore.ConnectError`. (#918)\n\n## 1.0.5 (March 27th, 2024)\n\n- Handle `EndOfStream` exception for anyio backend. (#899)\n- Allow trio `0.25.*` series in package dependancies. (#903)\n\n## 1.0.4 (February 21st, 2024)\n\n- Add `target` request extension. (#888)\n- Fix support for connection `Upgrade` and `CONNECT` when some data in the stream has been read. (#882)\n\n## 1.0.3 (February 13th, 2024)\n\n- Fix support for async cancellations. (#880)\n- Fix trace extension when used with socks proxy. (#849)\n- Fix SSL context for connections using the \"wss\" scheme (#869)\n\n## 1.0.2 (November 10th, 2023)\n\n- Fix `float(\"inf\")` timeouts in `Event.wait` function. (#846)\n\n## 1.0.1 (November 3rd, 2023)\n\n- Fix pool timeout to account for the total time spent retrying. (#823)\n- Raise a neater RuntimeError when the correct async deps are not installed. (#826)\n- Add support for synchronous TLS-in-TLS streams. (#840)\n\n## 1.0.0 (October 6th, 2023)\n\nFrom version 1.0 our async support is now optional, as the package has minimal dependencies by default.\n\nFor async support use either `pip install 'httpcore[asyncio]'` or `pip install 'httpcore[trio]'`.\n\nThe project versioning policy is now explicitly governed by SEMVER. See https://semver.org/.\n\n- Async support becomes fully optional. (#809)\n- Add support for Python 3.12. (#807)\n\n## 0.18.0 (September 8th, 2023)\n\n- Add support for HTTPS proxies. (#745, #786)\n- Drop Python 3.7 support. (#727)\n- Handle `sni_hostname` extension with SOCKS proxy. (#774)\n- Handle HTTP/1.1 half-closed connections gracefully. (#641)\n- Change the type of `Extensions` from `Mapping[Str, Any]` to `MutableMapping[Str, Any]`. (#762)\n\n## 0.17.3 (July 5th, 2023)\n\n- Support async cancellations, ensuring that the connection pool is left in a clean state when cancellations occur. (#726)\n- The networking backend interface has [been added to the public API](https://www.encode.io/httpcore/network-backends). Some classes which were previously private implementation detail are now part of the top-level public API. (#699)\n- Graceful handling of HTTP/2 GoAway frames, with requests being transparently retried on a new connection. (#730)\n- Add exceptions when a synchronous `trace callback` is passed to an asynchronous request or an asynchronous `trace callback` is passed to a synchronous request. (#717)\n- Drop Python 3.7 support. (#727)\n\n## 0.17.2 (May 23th, 2023)\n\n- Add `socket_options` argument to `ConnectionPool` and `HTTProxy` classes. (#668)\n- Improve logging with per-module logger names. (#690)\n- Add `sni_hostname` request extension. (#696)\n- Resolve race condition during import of `anyio` package. (#692)\n- Enable TCP_NODELAY for all synchronous sockets. (#651)\n\n## 0.17.1 (May 17th, 2023)\n\n- If 'retries' is set, then allow retries if an SSL handshake error occurs. (#669)\n- Improve correctness of tracebacks on network exceptions, by raising properly chained exceptions. (#678)\n- Prevent connection-hanging behaviour when HTTP/2 connections are closed by a server-sent 'GoAway' frame. (#679)\n- Fix edge-case exception when removing requests from the connection pool. (#680)\n- Fix pool timeout edge-case. (#688)\n\n## 0.17.0 (March 16th, 2023)\n\n- Add DEBUG level logging. (#648)\n- Respect HTTP/2 max concurrent streams when settings updates are sent by server. (#652)\n- Increase the allowable HTTP header size to 100kB. (#647)\n- Add `retries` option to SOCKS proxy classes. (#643)\n\n## 0.16.3 (December 20th, 2022)\n\n- Allow `ws` and `wss` schemes. Allows us to properly support websocket upgrade connections. (#625)\n- Forwarding HTTP proxies use a connection-per-remote-host. Required by some proxy implementations. (#637)\n- Don't raise `RuntimeError` when closing a connection pool with active connections. Removes some error cases when cancellations are used. (#631)\n- Lazy import `anyio`, so that it's no longer a hard dependancy, and isn't imported if unused. (#639)\n\n## 0.16.2 (November 25th, 2022)\n\n- Revert 'Fix async cancellation behaviour', which introduced race conditions. (#627)\n- Raise `RuntimeError` if attempting to us UNIX domain sockets on Windows. (#619)\n\n## 0.16.1 (November 17th, 2022)\n\n- Fix HTTP/1.1 interim informational responses, such as \"100 Continue\". (#605)\n\n## 0.16.0 (October 11th, 2022)\n\n- Support HTTP/1.1 informational responses. (#581)\n- Fix async cancellation behaviour. (#580)\n- Support `h11` 0.14. (#579)\n\n## 0.15.0 (May 17th, 2022)\n\n- Drop Python 3.6 support (#535)\n- Ensure HTTP proxy CONNECT requests include `timeout` configuration. (#506)\n- Switch to explicit `typing.Optional` for type hints. (#513)\n- For `trio` map OSError exceptions to `ConnectError`. (#543)\n\n## 0.14.7 (February 4th, 2022)\n\n- Requests which raise a PoolTimeout need to be removed from the pool queue. (#502)\n- Fix AttributeError that happened when Socks5Connection were terminated. (#501)\n\n## 0.14.6 (February 1st, 2022)\n\n- Fix SOCKS support for `http://` URLs. (#492)\n- Resolve race condition around exceptions during streaming a response. (#491)\n\n## 0.14.5 (January 18th, 2022)\n\n- SOCKS proxy support. (#478)\n- Add proxy_auth argument to HTTPProxy. (#481)\n- Improve error message on 'RemoteProtocolError' exception when server disconnects without sending a response. (#479)\n\n## 0.14.4 (January 5th, 2022)\n\n- Support HTTP/2 on HTTPS tunnelling proxies. (#468)\n- Fix proxy headers missing on HTTP forwarding. (#456)\n- Only instantiate SSL context if required. (#457)\n- More robust HTTP/2 handling. (#253, #439, #440, #441)\n\n## 0.14.3 (November 17th, 2021)\n\n- Fix race condition when removing closed connections from the pool. (#437)\n\n## 0.14.2 (November 16th, 2021)\n\n- Failed connections no longer remain in the pool. (Pull #433)\n\n## 0.14.1 (November 12th, 2021)\n\n- `max_connections` becomes optional. (Pull #429)\n- `certifi` is now included in the install dependancies. (Pull #428)\n- `h2` is now strictly optional. (Pull #428)\n\n## 0.14.0 (November 11th, 2021)\n\nThe 0.14 release is a complete reworking of `httpcore`, comprehensively addressing some underlying issues in the connection pooling, as well as substantially redesigning the API to be more user friendly.\n\nSome of the lower-level API design also makes the components more easily testable in isolation, and the package now has 100% test coverage.\n\nSee [discussion #419](https://github.com/encode/httpcore/discussions/419) for a little more background.\n\nThere's some other neat bits in there too, such as the \"trace\" extension, which gives a hook into inspecting the internal events that occur during the request/response cycle. This extension is needed for the HTTPX cli, in order to...\n\n* Log the point at which the connection is established, and the IP/port on which it is made.\n* Determine if the outgoing request should log as HTTP/1.1 or HTTP/2, rather than having to assume it's HTTP/2 if the --http2 flag was passed. (Which may not actually be true.)\n* Log SSL version info / certificate info.\n\nNote that `curio` support is not currently available in 0.14.0. If you're using `httpcore` with `curio` please get in touch, so we can assess if we ought to prioritize it as a feature or not.\n\n## 0.13.7 (September 13th, 2021)\n\n- Fix broken error messaging when URL scheme is missing, or a non HTTP(S) scheme is used. (Pull #403)\n\n## 0.13.6 (June 15th, 2021)\n\n### Fixed\n\n- Close sockets when read or write timeouts occur. (Pull #365)\n\n## 0.13.5 (June 14th, 2021)\n\n### Fixed\n\n- Resolved niggles with AnyIO EOF behaviours. (Pull #358, #362)\n\n## 0.13.4 (June 9th, 2021)\n\n### Added\n\n- Improved error messaging when URL scheme is missing, or a non HTTP(S) scheme is used. (Pull #354)\n\n### Fixed\n\n- Switched to `anyio` as the default backend implementation when running with `asyncio`. Resolves some awkward [TLS timeout issues](https://github.com/encode/httpx/discussions/1511).\n\n## 0.13.3 (May 6th, 2021)\n\n### Added\n\n- Support HTTP/2 prior knowledge, using `httpcore.SyncConnectionPool(http1=False)`. (Pull #333)\n\n### Fixed\n\n- Handle cases where environment does not provide `select.poll` support. (Pull #331)\n\n## 0.13.2 (April 29th, 2021)\n\n### Added\n\n- Improve error message for specific case of `RemoteProtocolError` where server disconnects without sending a response. (Pull #313)\n\n## 0.13.1 (April 28th, 2021)\n\n### Fixed\n\n- More resiliant testing for closed connections. (Pull #311)\n- Don't raise exceptions on ungraceful connection closes. (Pull #310)\n\n## 0.13.0 (April 21st, 2021)\n\nThe 0.13 release updates the core API in order to match the HTTPX Transport API,\nintroduced in HTTPX 0.18 onwards.\n\nAn example of making requests with the new interface is:\n\n```python\nwith httpcore.SyncConnectionPool() as http:\n    status_code, headers, stream, extensions = http.handle_request(\n        method=b'GET',\n        url=(b'https', b'example.org', 443, b'/'),\n        headers=[(b'host', b'example.org'), (b'user-agent', b'httpcore')]\n        stream=httpcore.ByteStream(b''),\n        extensions={}\n    )\n    body = stream.read()\n    print(status_code, body)\n```\n\n### Changed\n\n- The `.request()` method is now `handle_request()`. (Pull #296)\n- The `.arequest()` method is now `.handle_async_request()`. (Pull #296)\n- The `headers` argument is no longer optional. (Pull #296)\n- The `stream` argument is no longer optional. (Pull #296)\n- The `ext` argument is now named `extensions`, and is no longer optional. (Pull #296)\n- The `\"reason\"` extension keyword is now named `\"reason_phrase\"`. (Pull #296)\n- The `\"reason_phrase\"` and `\"http_version\"` extensions now use byte strings for their values. (Pull #296)\n- The `httpcore.PlainByteStream()` class becomes `httpcore.ByteStream()`. (Pull #296)\n\n### Added\n\n- Streams now support a `.read()` interface. (Pull #296)\n\n### Fixed\n\n- Task cancellation no longer leaks connections from the connection pool. (Pull #305)\n\n## 0.12.3 (December 7th, 2020)\n\n### Fixed\n\n- Abort SSL connections on close rather than waiting for remote EOF when using `asyncio`.  (Pull #167)\n- Fix exception raised in case of connect timeouts when using the `anyio` backend. (Pull #236)\n- Fix `Host` header precedence for `:authority` in HTTP/2. (Pull #241, #243)\n- Handle extra edge case when detecting for socket readability when using `asyncio`. (Pull #242, #244)\n- Fix `asyncio` SSL warning when using proxy tunneling. (Pull #249)\n\n## 0.12.2 (November 20th, 2020)\n\n### Fixed\n\n- Properly wrap connect errors on the asyncio backend. (Pull #235)\n- Fix `ImportError` occurring on Python 3.9 when using the HTTP/1.1 sync client in a multithreaded context. (Pull #237)\n\n## 0.12.1 (November 7th, 2020)\n\n### Added\n\n- Add connect retries. (Pull #221)\n\n### Fixed\n\n- Tweak detection of dropped connections, resolving an issue with open files limits on Linux. (Pull #185)\n- Avoid leaking connections when establishing an HTTP tunnel to a proxy has failed. (Pull #223)\n- Properly wrap OS errors when using `trio`. (Pull #225)\n\n## 0.12.0 (October 6th, 2020)\n\n### Changed\n\n- HTTP header casing is now preserved, rather than always sent in lowercase. (#216 and python-hyper/h11#104)\n\n### Added\n\n- Add Python 3.9 to officially supported versions.\n\n### Fixed\n\n- Gracefully handle a stdlib asyncio bug when a connection is closed while it is in a paused-for-reading state. (#201)\n\n## 0.11.1 (September 28nd, 2020)\n\n### Fixed\n\n- Add await to async semaphore release() coroutine (#197)\n- Drop incorrect curio classifier (#192)\n\n## 0.11.0 (September 22nd, 2020)\n\nThe Transport API with 0.11.0 has a couple of significant changes.\n\nFirstly we've moved changed the request interface in order to allow extensions, which will later enable us to support features\nsuch as trailing headers, HTTP/2 server push, and CONNECT/Upgrade connections.\n\nThe interface changes from:\n\n```python\ndef request(method, url, headers, stream, timeout):\n    return (http_version, status_code, reason, headers, stream)\n```\n\nTo instead including an optional dictionary of extensions on the request and response:\n\n```python\ndef request(method, url, headers, stream, ext):\n    return (status_code, headers, stream, ext)\n```\n\nHaving an open-ended extensions point will allow us to add later support for various optional features, that wouldn't otherwise be supported without these API changes.\n\nIn particular:\n\n* Trailing headers support.\n* HTTP/2 Server Push\n* sendfile.\n* Exposing raw connection on CONNECT, Upgrade, HTTP/2 bi-di streaming.\n* Exposing debug information out of the API, including template name, template context.\n\nCurrently extensions are limited to:\n\n* request: `timeout` - Optional. Timeout dictionary.\n* response: `http_version` - Optional. Include the HTTP version used on the response.\n* response: `reason` - Optional. Include the reason phrase used on the response. Only valid with HTTP/1.*.\n\nSee https://github.com/encode/httpx/issues/1274#issuecomment-694884553 for the history behind this.\n\nSecondly, the async version of `request` is now namespaced as `arequest`.\n\nThis allows concrete transports to support both sync and async implementations on the same class.\n\n### Added\n\n- Add curio support. (Pull #168)\n- Add anyio support, with `backend=\"anyio\"`. (Pull #169)\n\n### Changed\n\n- Update the Transport API to use 'ext' for optional extensions. (Pull #190)\n- Update the Transport API to use `.request` and `.arequest` so implementations can support both sync and async. (Pull #189)\n\n## 0.10.2 (August 20th, 2020)\n\n### Added\n\n- Added Unix Domain Socket support. (Pull #139)\n\n### Fixed\n\n- Always include the port on proxy CONNECT requests. (Pull #154)\n- Fix `max_keepalive_connections` configuration. (Pull #153)\n- Fixes behaviour in HTTP/1.1 where server disconnects can be used to signal the end of the response body. (Pull #164)\n\n## 0.10.1 (August 7th, 2020)\n\n- Include `max_keepalive_connections` on `AsyncHTTPProxy`/`SyncHTTPProxy` classes.\n\n## 0.10.0 (August 7th, 2020)\n\nThe most notable change in the 0.10.0 release is that HTTP/2 support is now fully optional.\n\nUse either `pip install httpcore` for HTTP/1.1 support only, or `pip install httpcore[http2]` for HTTP/1.1 and HTTP/2 support.\n\n### Added\n\n- HTTP/2 support becomes optional. (Pull #121, #130)\n- Add `local_address=...` support. (Pull #100, #134)\n- Add `PlainByteStream`, `IteratorByteStream`, `AsyncIteratorByteStream`. The `AsyncByteSteam` and `SyncByteStream` classes are now pure interface classes. (#133)\n- Add `LocalProtocolError`, `RemoteProtocolError` exceptions. (Pull #129)\n- Add `UnsupportedProtocol` exception. (Pull #128)\n- Add `.get_connection_info()` method. (Pull #102, #137)\n- Add better TRACE logs. (Pull #101)\n\n### Changed\n\n- `max_keepalive` is deprecated in favour of `max_keepalive_connections`. (Pull #140)\n\n### Fixed\n\n- Improve handling of server disconnects. (Pull #112)\n\n## 0.9.1 (May 27th, 2020)\n\n### Fixed\n\n- Proper host resolution for sync case, including IPv6 support. (Pull #97)\n- Close outstanding connections when connection pool is closed. (Pull #98)\n\n## 0.9.0 (May 21th, 2020)\n\n### Changed\n\n- URL port becomes an `Optional[int]` instead of `int`. (Pull #92)\n\n### Fixed\n\n- Honor HTTP/2 max concurrent streams settings. (Pull #89, #90)\n- Remove incorrect debug log. (Pull #83)\n\n## 0.8.4 (May 11th, 2020)\n\n### Added\n\n- Logging via HTTPCORE_LOG_LEVEL and HTTPX_LOG_LEVEL environment variables\nand TRACE level logging. (Pull #79)\n\n### Fixed\n\n- Reuse of connections on HTTP/2 in close concurrency situations. (Pull #81)\n\n## 0.8.3 (May 6rd, 2020)\n\n### Fixed\n\n- Include `Host` and `Accept` headers on proxy \"CONNECT\" requests.\n- De-duplicate any headers also contained in proxy_headers.\n- HTTP/2 flag not being passed down to proxy connections.\n\n## 0.8.2 (May 3rd, 2020)\n\n### Fixed\n\n- Fix connections using proxy forwarding requests not being added to the\nconnection pool properly. (Pull #70)\n\n## 0.8.1 (April 30th, 2020)\n\n### Changed\n\n- Allow inherintance of both `httpcore.AsyncByteStream`, `httpcore.SyncByteStream` without type conflicts.\n\n## 0.8.0 (April 30th, 2020)\n\n### Fixed\n\n- Fixed tunnel proxy support.\n\n### Added\n\n- New `TimeoutException` base class.\n\n## 0.7.0 (March 5th, 2020)\n\n- First integration with HTTPX.\n",
+        "description_content_type": "text/markdown",
+        "author_email": "Tom Christie <tom@tomchristie.com>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE.md"
+        ],
+        "classifier": [
+          "Development Status :: 3 - Alpha",
+          "Environment :: Web Environment",
+          "Framework :: AsyncIO",
+          "Framework :: Trio",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: BSD License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Topic :: Internet :: WWW/HTTP"
+        ],
+        "requires_dist": [
+          "certifi",
+          "h11>=0.16",
+          "anyio<5.0,>=4.0; extra == 'asyncio'",
+          "h2<5,>=3; extra == 'http2'",
+          "socksio==1.*; extra == 'socks'",
+          "trio<1.0,>=0.22.0; extra == 'trio'"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Documentation, https://www.encode.io/httpcore",
+          "Homepage, https://www.encode.io/httpcore/",
+          "Source, https://github.com/encode/httpcore"
+        ],
+        "provides_extra": [
+          "asyncio",
+          "http2",
+          "socks",
+          "trio"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/27/8d/2bc5f5546ff2ccb3f7de06742853483ab75bf74f36a92254702f8baecc79/factory_boy-3.3.3-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=1c39e3289f7e667c4285433f305f8d506efc2fe9c73aaea4151ebd5cdea394fc",
+          "hashes": {
+            "sha256": "1c39e3289f7e667c4285433f305f8d506efc2fe9c73aaea4151ebd5cdea394fc"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "factory_boy",
+        "version": "3.3.3",
+        "summary": "A versatile test fixtures replacement based on thoughtbot's factory_bot for Ruby.",
+        "description": "factory_boy\n===========\n\n.. image:: https://github.com/FactoryBoy/factory_boy/workflows/Test/badge.svg\n    :target: https://github.com/FactoryBoy/factory_boy/actions?query=workflow%3ATest\n\n.. image:: https://github.com/FactoryBoy/factory_boy/workflows/Check/badge.svg\n    :target: https://github.com/FactoryBoy/factory_boy/actions?query=workflow%3ACheck\n\n.. image:: https://img.shields.io/pypi/v/factory_boy.svg\n    :target: https://factoryboy.readthedocs.io/en/latest/changelog.html\n    :alt: Latest Version\n\n.. image:: https://img.shields.io/pypi/pyversions/factory_boy.svg\n    :target: https://pypi.org/project/factory-boy/\n    :alt: Supported Python versions\n\n.. image:: https://img.shields.io/pypi/wheel/factory_boy.svg\n    :target: https://pypi.org/project/factory-boy/\n    :alt: Wheel status\n\n.. image:: https://img.shields.io/pypi/l/factory_boy.svg\n    :target: https://github.com/FactoryBoy/factory_boy/blob/master/LICENSE\n    :alt: License\n\nfactory_boy is a fixtures replacement based on thoughtbot's `factory_bot <https://github.com/thoughtbot/factory_bot>`_.\n\nAs a fixtures replacement tool, it aims to replace static, hard to maintain fixtures\nwith easy-to-use factories for complex objects.\n\nInstead of building an exhaustive test setup with every possible combination of corner cases,\n``factory_boy`` allows you to use objects customized for the current test,\nwhile only declaring the test-specific fields:\n\n.. code-block:: python\n\n    class FooTests(unittest.TestCase):\n\n        def test_with_factory_boy(self):\n            # We need a 200€, paid order, shipping to australia, for a VIP customer\n            order = OrderFactory(\n                amount=200,\n                status='PAID',\n                customer__is_vip=True,\n                address__country='AU',\n            )\n            # Run the tests here\n\n        def test_without_factory_boy(self):\n            address = Address(\n                street=\"42 fubar street\",\n                zipcode=\"42Z42\",\n                city=\"Sydney\",\n                country=\"AU\",\n            )\n            customer = Customer(\n                first_name=\"John\",\n                last_name=\"Doe\",\n                phone=\"+1234\",\n                email=\"john.doe@example.org\",\n                active=True,\n                is_vip=True,\n                address=address,\n            )\n            # etc.\n\nfactory_boy is designed to work well with various ORMs (Django, MongoDB, SQLAlchemy),\nand can easily be extended for other libraries.\n\nIts main features include:\n\n- Straightforward declarative syntax\n- Chaining factory calls while retaining the global context\n- Support for multiple build strategies (saved/unsaved instances, stubbed objects)\n- Multiple factories per class support, including inheritance\n\n\nLinks\n-----\n\n* Documentation: https://factoryboy.readthedocs.io/\n* Repository: https://github.com/FactoryBoy/factory_boy\n* Package: https://pypi.org/project/factory-boy/\n* Mailing-list: `factoryboy@googlegroups.com <mailto:factoryboy@googlegroups.com>`_ | https://groups.google.com/forum/#!forum/factoryboy\n\n\nDownload\n--------\n\nPyPI: https://pypi.org/project/factory-boy/\n\n.. code-block:: sh\n\n    $ pip install factory_boy\n\nSource: https://github.com/FactoryBoy/factory_boy/\n\n.. code-block:: sh\n\n    $ git clone git://github.com/FactoryBoy/factory_boy/\n    $ python setup.py install\n\n\nUsage\n-----\n\n\n.. note:: This section provides a quick summary of factory_boy features.\n          A more detailed listing is available in the full documentation.\n\n\nDefining factories\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nFactories declare a set of attributes used to instantiate a Python object.\nThe class of the object must be defined in the ``model`` field of a ``class Meta:`` attribute:\n\n.. code-block:: python\n\n    import factory\n    from . import models\n\n    class UserFactory(factory.Factory):\n        class Meta:\n            model = models.User\n\n        first_name = 'John'\n        last_name = 'Doe'\n        admin = False\n\n    # Another, different, factory for the same object\n    class AdminFactory(factory.Factory):\n        class Meta:\n            model = models.User\n\n        first_name = 'Admin'\n        last_name = 'User'\n        admin = True\n\n\nORM integration\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nfactory_boy integration with Object Relational Mapping (ORM) tools is provided\nthrough specific ``factory.Factory`` subclasses:\n\n* Django, with ``factory.django.DjangoModelFactory``\n* Mogo, with ``factory.mogo.MogoFactory``\n* MongoEngine, with ``factory.mongoengine.MongoEngineFactory``\n* SQLAlchemy, with ``factory.alchemy.SQLAlchemyModelFactory``\n\nMore details can be found in the ORM section.\n\n\nUsing factories\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nfactory_boy supports several different instantiation strategies: build, create, and stub:\n\n.. code-block:: python\n\n    # Returns a User instance that's not saved\n    user = UserFactory.build()\n\n    # Returns a saved User instance.\n    # UserFactory must subclass an ORM base class, such as DjangoModelFactory.\n    user = UserFactory.create()\n\n    # Returns a stub object (just a bunch of attributes)\n    obj = UserFactory.stub()\n\n\nYou can use the Factory class as a shortcut for the default instantiation strategy:\n\n.. code-block:: python\n\n    # Same as UserFactory.create()\n    user = UserFactory()\n\n\nNo matter which strategy is used, it's possible to override the defined attributes by passing keyword arguments:\n\n.. code-block:: pycon\n\n    # Build a User instance and override first_name\n    >>> user = UserFactory.build(first_name='Joe')\n    >>> user.first_name\n    \"Joe\"\n\n\nIt is also possible to create a bunch of objects in a single call:\n\n.. code-block:: pycon\n\n    >>> users = UserFactory.build_batch(10, first_name=\"Joe\")\n    >>> len(users)\n    10\n    >>> [user.first_name for user in users]\n    [\"Joe\", \"Joe\", \"Joe\", \"Joe\", \"Joe\", \"Joe\", \"Joe\", \"Joe\", \"Joe\", \"Joe\"]\n\n\nRealistic, random values\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nDemos look better with random yet realistic values; and those realistic values can also help discover bugs.\nFor this, factory_boy relies on the excellent `faker <https://faker.readthedocs.io/en/latest/>`_ library:\n\n.. code-block:: python\n\n    class RandomUserFactory(factory.Factory):\n        class Meta:\n            model = models.User\n\n        first_name = factory.Faker('first_name')\n        last_name = factory.Faker('last_name')\n\n.. code-block:: pycon\n\n    >>> RandomUserFactory()\n    <User: Lucy Murray>\n\n\nReproducible random values\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nThe use of fully randomized data in tests is quickly a problem for reproducing broken builds.\nTo that purpose, factory_boy provides helpers to handle the random seeds it uses, located in the ``factory.random`` module:\n\n.. code-block:: python\n\n    import factory.random\n\n    def setup_test_environment():\n        factory.random.reseed_random('my_awesome_project')\n        # Other setup here\n\n\nLazy Attributes\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n\nMost factory attributes can be added using static values that are evaluated when the factory is defined,\nbut some attributes (such as fields whose value is computed from other elements)\nwill need values assigned each time an instance is generated.\n\nThese \"lazy\" attributes can be added as follows:\n\n.. code-block:: python\n\n    class UserFactory(factory.Factory):\n        class Meta:\n            model = models.User\n\n        first_name = 'Joe'\n        last_name = 'Blow'\n        email = factory.LazyAttribute(lambda a: '{}.{}@example.com'.format(a.first_name, a.last_name).lower())\n        date_joined = factory.LazyFunction(datetime.now)\n\n.. code-block:: pycon\n\n    >>> UserFactory().email\n    \"joe.blow@example.com\"\n\n\n.. note:: ``LazyAttribute`` calls the function with the object being constructed as an argument, when\n          ``LazyFunction`` does not send any argument.\n\n\nSequences\n\"\"\"\"\"\"\"\"\"\n\nUnique values in a specific format (for example, e-mail addresses) can be generated using sequences. Sequences are defined by using ``Sequence`` or the decorator ``sequence``:\n\n.. code-block:: python\n\n    class UserFactory(factory.Factory):\n        class Meta:\n            model = models.User\n\n        email = factory.Sequence(lambda n: 'person{}@example.com'.format(n))\n\n    >>> UserFactory().email\n    'person0@example.com'\n    >>> UserFactory().email\n    'person1@example.com'\n\n\nAssociations\n\"\"\"\"\"\"\"\"\"\"\"\"\n\nSome objects have a complex field, that should itself be defined from a dedicated factories.\nThis is handled by the ``SubFactory`` helper:\n\n.. code-block:: python\n\n    class PostFactory(factory.Factory):\n        class Meta:\n            model = models.Post\n\n        author = factory.SubFactory(UserFactory)\n\n\nThe associated object's strategy will be used:\n\n\n.. code-block:: python\n\n    # Builds and saves a User and a Post\n    >>> post = PostFactory()\n    >>> post.id is None  # Post has been 'saved'\n    False\n    >>> post.author.id is None  # post.author has been saved\n    False\n\n    # Builds but does not save a User, and then builds but does not save a Post\n    >>> post = PostFactory.build()\n    >>> post.id is None\n    True\n    >>> post.author.id is None\n    True\n\nSupport Policy\n--------------\n\n``factory_boy`` supports active Python versions as well as PyPy3.\n\n- **Python**'s `supported versions\n  <https://devguide.python.org/versions/#supported-versions>`__.\n- **Django**'s `supported\n  versions <https://www.djangoproject.com/download/#supported-versions>`__.\n- **SQLAlchemy**: `latest version on PyPI <https://pypi.org/project/SQLAlchemy/>`__.\n- **MongoEngine**: `latest version on PyPI <https://pypi.org/project/mongoengine/>`__.\n\nDebugging factory_boy\n---------------------\n\nDebugging factory_boy can be rather complex due to the long chains of calls.\nDetailed logging is available through the ``factory`` logger.\n\nA helper, `factory.debug()`, is available to ease debugging:\n\n.. code-block:: python\n\n    with factory.debug():\n        obj = TestModel2Factory()\n\n\n    import logging\n    logger = logging.getLogger('factory')\n    logger.addHandler(logging.StreamHandler())\n    logger.setLevel(logging.DEBUG)\n\nThis will yield messages similar to those (artificial indentation):\n\n.. code-block:: ini\n\n    BaseFactory: Preparing tests.test_using.TestModel2Factory(extra={})\n      LazyStub: Computing values for tests.test_using.TestModel2Factory(two=<OrderedDeclarationWrapper for <factory.declarations.SubFactory object at 0x1e15610>>)\n        SubFactory: Instantiating tests.test_using.TestModelFactory(__containers=(<LazyStub for tests.test_using.TestModel2Factory>,), one=4), create=True\n        BaseFactory: Preparing tests.test_using.TestModelFactory(extra={'__containers': (<LazyStub for tests.test_using.TestModel2Factory>,), 'one': 4})\n          LazyStub: Computing values for tests.test_using.TestModelFactory(one=4)\n          LazyStub: Computed values, got tests.test_using.TestModelFactory(one=4)\n        BaseFactory: Generating tests.test_using.TestModelFactory(one=4)\n      LazyStub: Computed values, got tests.test_using.TestModel2Factory(two=<tests.test_using.TestModel object at 0x1e15410>)\n    BaseFactory: Generating tests.test_using.TestModel2Factory(two=<tests.test_using.TestModel object at 0x1e15410>)\n\nContributing\n------------\n\nfactory_boy is distributed under the MIT License.\n\nIssues should be opened through `GitHub Issues <https://github.com/FactoryBoy/factory_boy/issues/>`_; whenever possible, a pull request should be included.\nQuestions and suggestions are welcome on the `mailing-list <mailto:factoryboy@googlegroups.com>`_.\n\nDevelopment dependencies can be installed in a `virtualenv\n<https://docs.python.org/3/tutorial/venv.html>`_ with:\n\n.. code-block:: sh\n\n    $ pip install --editable '.[dev]'\n\nAll pull requests should pass the test suite, which can be launched simply with:\n\n.. code-block:: sh\n\n    $ make testall\n\n\n\nIn order to test coverage, please use:\n\n.. code-block:: sh\n\n    $ make coverage\n\n\nTo test with a specific framework version, you may use a ``tox`` target:\n\n.. code-block:: sh\n\n    # list all tox environments\n    $ tox --listenvs\n\n    # run tests inside a specific environment (django/mongoengine/SQLAlchemy are not installed)\n    $ tox -e py310\n\n    # run tests inside a specific environment (django)\n    $ tox -e py310-djangomain\n\n    # run tests inside a specific environment (alchemy)\n    $ tox -e py310-alchemy\n\n    # run tests inside a specific environment (mongoengine)\n    $ tox -e py310-mongo\n\n\nPackaging\n---------\n\nFor users interesting in packaging FactoryBoy into downstream distribution channels\n(e.g. ``.deb``, ``.rpm``, ``.ebuild``), the following tips might be helpful:\n\nDependencies\n\"\"\"\"\"\"\"\"\"\"\"\"\n\nThe package's run-time dependencies are listed in ``setup.cfg``.\nThe dependencies useful for building and testing the library are covered by the\n``dev`` and ``doc`` extras.\n\nMoreover, all development / testing tasks are driven through ``make(1)``.\n\nBuilding\n\"\"\"\"\"\"\"\"\n\nIn order to run the build steps (currently only for docs), run:\n\n.. code-block:: sh\n\n    python setup.py egg_info\n    make doc\n\nTesting\n\"\"\"\"\"\"\"\n\nWhen testing for the active Python environment, run the following:\n\n.. code-block:: sh\n\n    make test\n\n.. note::\n\n    You must make sure that the ``factory`` module is importable, as it is imported from\n    the testing code.\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "factory_boy",
+          "factory",
+          "fixtures"
+        ],
+        "home_page": "https://github.com/FactoryBoy/factory_boy",
+        "author": "Mark Sandstrom",
+        "author_email": "mark@deliciouslynerdy.com",
+        "maintainer": "Raphaël Barrois",
+        "maintainer_email": "raphael.barrois+fboy@polytechnique.org",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Framework :: Django",
+          "Framework :: Django :: 4.2",
+          "Framework :: Django :: 5.0",
+          "Framework :: Django :: 5.1",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Software Development :: Testing",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "requires_dist": [
+          "Faker>=0.7.0",
+          "coverage; extra == \"dev\"",
+          "Django; extra == \"dev\"",
+          "flake8; extra == \"dev\"",
+          "isort; extra == \"dev\"",
+          "mypy; extra == \"dev\"",
+          "Pillow; extra == \"dev\"",
+          "SQLAlchemy; extra == \"dev\"",
+          "mongoengine; extra == \"dev\"",
+          "mongomock; extra == \"dev\"",
+          "wheel>=0.32.0; extra == \"dev\"",
+          "tox; extra == \"dev\"",
+          "zest.releaser[recommended]; extra == \"dev\"",
+          "Sphinx; extra == \"doc\"",
+          "sphinx-rtd-theme; extra == \"doc\"",
+          "sphinxcontrib-spelling; extra == \"doc\""
+        ],
+        "requires_python": ">=3.8",
+        "provides_extra": [
+          "dev",
+          "doc"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/9d/7a/d968e294073affff457b041c2be9868a40c1c71f4a35fcc1e45e5493067b/pytest_cov-7.1.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=a0461110b7865f9a271aa1b51e516c9a95de9d696734a2f71e3e78f46e1d4678",
+          "hashes": {
+            "sha256": "a0461110b7865f9a271aa1b51e516c9a95de9d696734a2f71e3e78f46e1d4678"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pytest-cov",
+        "version": "7.1.0",
+        "summary": "Pytest plugin for measuring coverage.",
+        "description": "========\nOverview\n========\n\n.. start-badges\n\n.. list-table::\n    :stub-columns: 1\n\n    * - docs\n      - |docs|\n    * - tests\n      - |github-actions|\n    * - package\n      - |version| |conda-forge| |wheel| |supported-versions| |supported-implementations| |commits-since|\n\n.. |docs| image:: https://readthedocs.org/projects/pytest-cov/badge/?style=flat\n    :target: https://readthedocs.org/projects/pytest-cov/\n    :alt: Documentation Status\n\n.. |github-actions| image:: https://github.com/pytest-dev/pytest-cov/actions/workflows/test.yml/badge.svg\n    :alt: GitHub Actions Status\n    :target: https://github.com/pytest-dev/pytest-cov/actions\n\n.. |version| image:: https://img.shields.io/pypi/v/pytest-cov.svg\n    :alt: PyPI Package latest release\n    :target: https://pypi.org/project/pytest-cov\n\n.. |conda-forge| image:: https://img.shields.io/conda/vn/conda-forge/pytest-cov.svg\n    :target: https://anaconda.org/conda-forge/pytest-cov\n.. |wheel| image:: https://img.shields.io/pypi/wheel/pytest-cov.svg\n    :alt: PyPI Wheel\n    :target: https://pypi.org/project/pytest-cov\n\n.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pytest-cov.svg\n    :alt: Supported versions\n    :target: https://pypi.org/project/pytest-cov\n\n.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/pytest-cov.svg\n    :alt: Supported implementations\n    :target: https://pypi.org/project/pytest-cov\n\n.. |commits-since| image:: https://img.shields.io/github/commits-since/pytest-dev/pytest-cov/v7.1.0.svg\n    :alt: Commits since latest release\n    :target: https://github.com/pytest-dev/pytest-cov/compare/v7.1.0...master\n\n.. end-badges\n\nThis plugin provides coverage functionality as a pytest plugin. Compared to just using ``coverage run`` this plugin does some extras:\n\n* Automatic erasing and combination of .coverage files and default reporting.\n* Support for detailed coverage contexts (add ``--cov-context=test`` to have the full test name including parametrization as the context).\n* Xdist support: you can use all of pytest-xdist's features including remote interpreters and still get coverage.\n* Consistent pytest behavior. If you run ``coverage run -m pytest`` you will have slightly different ``sys.path`` (CWD will be\n  in it, unlike when running ``pytest``).\n\nAll features offered by the coverage package should work, either through pytest-cov's command line options or\nthrough coverage's config file.\n\n* Free software: MIT license\n\nInstallation\n============\n\nInstall with pip::\n\n    pip install pytest-cov\n\nFor distributed testing support install pytest-xdist::\n\n    pip install pytest-xdist\n\nUpgrading from pytest-cov 6.3\n-----------------------------\n\n`pytest-cov 6.3` and older were using a ``.pth`` file to enable coverage measurements in subprocesses. This was removed in `pytest-cov 7` - use `coverage's patch options <https://coverage.readthedocs.io/en/latest/config.html#run-patch>`_ to enable subprocess measurements.\n\nUninstalling\n------------\n\nUninstall with pip::\n\n    pip uninstall pytest-cov\n\nUnder certain scenarios a stray ``.pth`` file may be left around in site-packages.\n\n* `pytest-cov 2.0` may leave a ``pytest-cov.pth`` if you installed without wheels\n  (``easy_install``, ``setup.py install`` etc).\n* `pytest-cov 1.8 or older` will leave a ``init_cov_core.pth``.\n\nUsage\n=====\n\n::\n\n    pytest --cov=myproj tests/\n\nWould produce a report like::\n\n    -------------------- coverage: ... ---------------------\n    Name                 Stmts   Miss  Cover\n    ----------------------------------------\n    myproj/__init__          2      0   100%\n    myproj/myproj          257     13    94%\n    myproj/feature4286      94      7    92%\n    ----------------------------------------\n    TOTAL                  353     20    94%\n\nDocumentation\n=============\n\nhttps://pytest-cov.readthedocs.io/en/latest/\n\n\nCoverage Data File\n==================\n\nThe data file is erased at the beginning of testing to ensure clean data for each test run. If you\nneed to combine the coverage of several test runs you can use the ``--cov-append`` option to append\nthis coverage data to coverage data from previous test runs.\n\nThe data file is left at the end of testing so that it is possible to use normal coverage tools to\nexamine it.\n\nLimitations\n===========\n\nFor distributed testing the workers must have the pytest-cov package installed. This is needed since\nthe plugin must be registered through setuptools for pytest to start the plugin on the\nworker.\n\nSecurity\n========\n\nTo report a security vulnerability please use the `Tidelift security contact <https://tidelift.com/security>`_.\nTidelift will coordinate the fix and disclosure.\n\nAcknowledgements\n================\n\nWhilst this plugin has been built fresh from the ground up it has been influenced by the work done\non pytest-coverage (Ross Lawley, James Mills, Holger Krekel) and nose-cover (Jason Pellerin) which are\nother coverage plugins.\n\nNed Batchelder for coverage and its ability to combine the coverage results of parallel runs.\n\nHolger Krekel for pytest with its distributed testing support.\n\nJason Pellerin for nose.\n\nMichael Foord for unittest2.\n\nNo doubt others have contributed to these tools as well.\n\nChangelog\n=========\n\n7.1.0 (2026-03-21)\n------------------\n\n* Fixed total coverage computation to always be consistent, regardless of reporting settings.\n  Previously some reports could produce different total counts, and consequently can make --cov-fail-under behave different depending on\n  reporting options.\n  See `#641 <https://github.com/pytest-dev/pytest-cov/issues/641>`_.\n\n* Improve handling of ResourceWarning from sqlite3.\n\n  The plugin adds warning filter for sqlite3 ``ResourceWarning`` unclosed database (since 6.2.0).\n  It checks if there is already existing plugin for this message by comparing filter regular expression.\n  When filter is specified on command line the message is escaped and does not match an expected message.\n  A check for an escaped regular expression is added to handle this case.\n\n  With this fix one can suppress ``ResourceWarning`` from sqlite3 from command line::\n\n    pytest -W \"ignore:unclosed database in <sqlite3.Connection object at:ResourceWarning\" ...\n* Various improvements to documentation.\n  Contributed by Art Pelling in `#718 <https://github.com/pytest-dev/pytest-cov/pull/718>`_ and\n  \"vivodi\" in `#738 <https://github.com/pytest-dev/pytest-cov/pull/738>`_.\n  Also closed `#736 <https://github.com/pytest-dev/pytest-cov/issues/736>`_.\n* Fixed some assertions in tests.\n  Contributed by in Markéta Machová in `#722 <https://github.com/pytest-dev/pytest-cov/pull/722>`_.\n* Removed unnecessary coverage configuration copying (meant as a backup because reporting commands had configuration side-effects before coverage 5.0).\n\n7.0.0 (2025-09-09)\n------------------\n\n* Dropped support for subprocesses measurement.\n\n  It was a feature added long time ago when coverage lacked a nice way to measure subprocesses created in tests.\n  It relied on a ``.pth`` file, there was no way to opt-out and it created bad interations\n  with `coverage's new patch system <https://coverage.readthedocs.io/en/latest/config.html#run-patch>`_ added\n  in `7.10 <https://coverage.readthedocs.io/en/7.10.6/changes.html#version-7-10-0-2025-07-24>`_.\n\n  To migrate to this release you might need to enable the suprocess patch, example for ``.coveragerc``:\n\n  .. code-block:: ini\n\n    [run]\n    patch = subprocess\n\n  This release also requires at least coverage 7.10.6.\n* Switched packaging to have metadata completely in ``pyproject.toml`` and use `hatchling <https://pypi.org/project/hatchling/>`_ for\n  building.\n  Contributed by Ofek Lev in `#551 <https://github.com/pytest-dev/pytest-cov/pull/551>`_\n  with some extras in `#716 <https://github.com/pytest-dev/pytest-cov/pull/716>`_.\n* Removed some not really necessary testing deps like ``six``.\n\n6.3.0 (2025-09-06)\n------------------\n\n* Added support for markdown reports.\n  Contributed by Marcos Boger in `#712 <https://github.com/pytest-dev/pytest-cov/pull/712>`_\n  and `#714 <https://github.com/pytest-dev/pytest-cov/pull/714>`_.\n* Fixed some formatting issues in docs.\n  Anonymous contribution in `#706 <https://github.com/pytest-dev/pytest-cov/pull/706>`_.\n\n6.2.1 (2025-06-12)\n------------------\n\n* Added a version requirement for pytest's pluggy dependency (1.2.0, released 2023-06-21) that has the required new-style hookwrapper API.\n* Removed deprecated license classifier (packaging).\n* Disabled coverage warnings in two more situations where they have no value:\n\n  * \"module-not-measured\" in workers\n  * \"already-imported\" in subprocesses\n\n6.2.0 (2025-06-11)\n------------------\n\n* The plugin now adds 3 rules in the filter warnings configuration to prevent common coverage warnings being raised as obscure errors::\n\n    default:unclosed database in <sqlite3.Connection object at:ResourceWarning\n    once::PytestCovWarning\n    once::CoverageWarning\n\n  This fixes most of the bad interactions that are occurring on pytest 8.4 with ``filterwarnings=error``.\n\n  The plugin will check if there already matching rules for the 3 categories\n  (``ResourceWarning``, ``PytestCovWarning``, ``CoverageWarning``) and message (``unclosed database in <sqlite3.Connection object at``) before adding the filters.\n\n  This means you can have this in your pytest configuration for complete oblivion (not recommended, if that is not clear)::\n\n    filterwarnings = [\n        \"error\",\n        \"ignore:unclosed database in <sqlite3.Connection object at:ResourceWarning\",\n        \"ignore::PytestCovWarning\",\n        \"ignore::CoverageWarning\",\n    ]\n\n\n\n6.1.1 (2025-04-05)\n------------------\n\n* Fixed breakage that occurs when ``--cov-context`` and the ``no_cover`` marker are used together.\n\n6.1.0 (2025-04-01)\n------------------\n\n* Change terminal output to use full width lines for the coverage header.\n  Contributed by Tsvika Shapira in `#678 <https://github.com/pytest-dev/pytest-cov/pull/678>`_.\n* Removed unnecessary CovFailUnderWarning. Fixes `#675 <https://github.com/pytest-dev/pytest-cov/issues/675>`_.\n* Fixed the term report not using the precision specified via ``--cov-precision``.\n\n\n6.0.0 (2024-10-29)\n------------------\n\n* Updated various documentation inaccuracies, especially on subprocess handling.\n* Changed fail under checks to use the precision set in the coverage configuration.\n  Now it will perform the check just like ``coverage report`` would.\n* Added a ``--cov-precision`` cli option that can override the value set in your coverage configuration.\n* Dropped support for now EOL Python 3.8.\n\n5.0.0 (2024-03-24)\n------------------\n\n* Removed support for xdist rsync (now deprecated).\n  Contributed by Matthias Reichenbach in `#623 <https://github.com/pytest-dev/pytest-cov/pull/623>`_.\n* Switched docs theme to Furo.\n* Various legacy Python cleanup and CI improvements.\n  Contributed by Christian Clauss and Hugo van Kemenade in\n  `#630 <https://github.com/pytest-dev/pytest-cov/pull/630>`_,\n  `#631 <https://github.com/pytest-dev/pytest-cov/pull/631>`_,\n  `#632 <https://github.com/pytest-dev/pytest-cov/pull/632>`_ and\n  `#633 <https://github.com/pytest-dev/pytest-cov/pull/633>`_.\n* Added a ``pyproject.toml`` example in the docs.\n  Contributed by Dawn James in `#626 <https://github.com/pytest-dev/pytest-cov/pull/626>`_.\n* Modernized project's pre-commit hooks to use ruff. Initial POC contributed by\n  Christian Clauss in `#584 <https://github.com/pytest-dev/pytest-cov/pull/584>`_.\n* Dropped support for Python 3.7.\n\n4.1.0 (2023-05-24)\n------------------\n\n* Updated CI with new Pythons and dependencies.\n* Removed rsyncdir support. This makes pytest-cov compatible with xdist 3.0.\n  Contributed by Sorin Sbarnea in `#558 <https://github.com/pytest-dev/pytest-cov/pull/558>`_.\n* Optimized summary generation to not be performed if no reporting is active (for example,\n  when ``--cov-report=''`` is used without ``--cov-fail-under``).\n  Contributed by Jonathan Stewmon in `#589 <https://github.com/pytest-dev/pytest-cov/pull/589>`_.\n* Added support for JSON reporting.\n  Contributed by Matthew Gamble in `#582 <https://github.com/pytest-dev/pytest-cov/pull/582>`_.\n* Refactored code to use f-strings.\n  Contributed by Mark Mayo in `#572 <https://github.com/pytest-dev/pytest-cov/pull/572>`_.\n* Fixed a skip in the test suite for some old xdist.\n  Contributed by a bunch of people in `#565 <https://github.com/pytest-dev/pytest-cov/pull/565>`_.\n* Dropped support for Python 3.6.\n\n\n4.0.0 (2022-09-28)\n------------------\n\n**Note that this release drops support for multiprocessing.**\n\n\n* `--cov-fail-under` no longer causes `pytest --collect-only` to fail\n  Contributed by Zac Hatfield-Dodds in `#511 <https://github.com/pytest-dev/pytest-cov/pull/511>`_.\n* Dropped support for multiprocessing (mostly because `issue 82408 <https://github.com/python/cpython/issues/82408>`_). This feature was\n  mostly working but very broken in certain scenarios and made the test suite very flaky and slow.\n\n  There is builtin multiprocessing support in coverage and you can migrate to that. All you need is this in your\n  ``.coveragerc``::\n\n    [run]\n    concurrency = multiprocessing\n    parallel = true\n    sigterm = true\n* Fixed deprecation in ``setup.py`` by trying to import setuptools before distutils.\n  Contributed by Ben Greiner in `#545 <https://github.com/pytest-dev/pytest-cov/pull/545>`_.\n* Removed undesirable new lines that were displayed while reporting was disabled.\n  Contributed by Delgan in `#540 <https://github.com/pytest-dev/pytest-cov/pull/540>`_.\n* Documentation fixes.\n  Contributed by Andre Brisco in `#543 <https://github.com/pytest-dev/pytest-cov/pull/543>`_\n  and Colin O'Dell in `#525 <https://github.com/pytest-dev/pytest-cov/pull/525>`_.\n* Added support for LCOV output format via `--cov-report=lcov`. Only works with coverage 6.3+.\n  Contributed by Christian Fetzer in `#536 <https://github.com/pytest-dev/pytest-cov/pull/536>`_.\n* Modernized pytest hook implementation.\n  Contributed by Bruno Oliveira in `#549 <https://github.com/pytest-dev/pytest-cov/pull/549>`_\n  and Ronny Pfannschmidt in `#550 <https://github.com/pytest-dev/pytest-cov/pull/550>`_.\n\n\n3.0.0 (2021-10-04)\n-------------------\n\n**Note that this release drops support for Python 2.7 and Python 3.5.**\n\n* Added support for Python 3.10 and updated various test dependencies.\n  Contributed by Hugo van Kemenade in\n  `#500 <https://github.com/pytest-dev/pytest-cov/pull/500>`_.\n* Switched from Travis CI to GitHub Actions. Contributed by Hugo van Kemenade in\n  `#494 <https://github.com/pytest-dev/pytest-cov/pull/494>`_ and\n  `#495 <https://github.com/pytest-dev/pytest-cov/pull/495>`_.\n* Add a ``--cov-reset`` CLI option.\n  Contributed by Danilo Šegan in\n  `#459 <https://github.com/pytest-dev/pytest-cov/pull/459>`_.\n* Improved validation of ``--cov-fail-under`` CLI option.\n  Contributed by ... Ronny Pfannschmidt's desire for skark in\n  `#480 <https://github.com/pytest-dev/pytest-cov/pull/480>`_.\n* Dropped Python 2.7 support.\n  Contributed by Thomas Grainger in\n  `#488 <https://github.com/pytest-dev/pytest-cov/pull/488>`_.\n* Updated trove classifiers. Contributed by Michał Bielawski in\n  `#481 <https://github.com/pytest-dev/pytest-cov/pull/481>`_.\n* Reverted change for `toml` requirement.\n  Contributed by Thomas Grainger in\n  `#477 <https://github.com/pytest-dev/pytest-cov/pull/477>`_.\n\n2.12.1 (2021-06-01)\n-------------------\n\n* Changed the `toml` requirement to be always be directly required (instead of being required through a coverage extra).\n  This fixes issues with pip-compile (`pip-tools#1300 <https://github.com/jazzband/pip-tools/issues/1300>`_).\n  Contributed by Sorin Sbarnea in `#472 <https://github.com/pytest-dev/pytest-cov/pull/472>`_.\n* Documented ``show_contexts``.\n  Contributed by Brian Rutledge in `#473 <https://github.com/pytest-dev/pytest-cov/pull/473>`_.\n\n2.12.0 (2021-05-14)\n-------------------\n\n* Added coverage's `toml` extra to install requirements in setup.py.\n  Contributed by Christian Riedel in `#410 <https://github.com/pytest-dev/pytest-cov/pull/410>`_.\n* Fixed ``pytest_cov.__version__`` to have the right value (string with version instead of a string\n  including ``__version__ =``).\n* Fixed license classifier in ``setup.py``.\n  Contributed by Chris Sreesangkom in `#467 <https://github.com/pytest-dev/pytest-cov/pull/467>`_.\n* Fixed *commits since* badge.\n  Contributed by Terence Honles in `#470 <https://github.com/pytest-dev/pytest-cov/pull/470>`_.\n\n2.11.1 (2021-01-20)\n-------------------\n\n* Fixed support for newer setuptools (v42+).\n  Contributed by Michał Górny in `#451 <https://github.com/pytest-dev/pytest-cov/pull/451>`_.\n\n2.11.0 (2021-01-18)\n-------------------\n\n* Bumped minimum coverage requirement to 5.2.1. This prevents reporting issues.\n  Contributed by Mateus Berardo de Souza Terra in `#433 <https://github.com/pytest-dev/pytest-cov/pull/433>`_.\n* Improved sample projects (from the `examples <https://github.com/pytest-dev/pytest-cov/tree/master/examples>`_\n  directory) to support running `tox -e pyXY`. Now the example configures a suffixed coverage data file,\n  and that makes the cleanup environment unnecessary.\n  Contributed by Ganden Schaffner in `#435 <https://github.com/pytest-dev/pytest-cov/pull/435>`_.\n* Removed the empty `console_scripts` entrypoint that confused some Gentoo build script.\n  I didn't ask why it was so broken cause I didn't want to ruin my day.\n  Contributed by Michał Górny in `#434 <https://github.com/pytest-dev/pytest-cov/pull/434>`_.\n* Fixed the missing `coverage context <https://coverage.readthedocs.io/en/latest/contexts.html>`_\n  when using subprocesses.\n  Contributed by Bernát Gábor in `#443 <https://github.com/pytest-dev/pytest-cov/pull/443>`_.\n* Updated the config section in the docs.\n  Contributed by Pamela McA'Nulty in `#429 <https://github.com/pytest-dev/pytest-cov/pull/429>`_.\n* Migrated CI to travis-ci.com (from .org).\n\n2.10.1 (2020-08-14)\n-------------------\n\n* Support for ``pytest-xdist`` 2.0, which breaks compatibility with ``pytest-xdist`` before 1.22.3 (from 2017).\n  Contributed by Zac Hatfield-Dodds in `#412 <https://github.com/pytest-dev/pytest-cov/pull/412>`_.\n* Fixed the ``LocalPath has no attribute startswith`` failure that occurred when using the ``pytester`` plugin\n  in inline mode.\n\n2.10.0 (2020-06-12)\n-------------------\n\n* Improved the ``--no-cov`` warning. Now it's only shown if ``--no-cov`` is present before ``--cov``.\n* Removed legacy pytest support. Changed ``setup.py`` so that ``pytest>=4.6`` is required.\n\n2.9.0 (2020-05-22)\n------------------\n\n* Fixed ``RemovedInPytest4Warning`` when using Pytest 3.10.\n  Contributed by Michael Manganiello in `#354 <https://github.com/pytest-dev/pytest-cov/pull/354>`_.\n* Made pytest startup faster when plugin not active by lazy-importing.\n  Contributed by Anders Hovmöller in `#339 <https://github.com/pytest-dev/pytest-cov/pull/339>`_.\n* Various CI improvements.\n  Contributed by Daniel Hahler in `#363 <https://github.com/pytest-dev/pytest-cov/pull/363>`_ and\n  `#364 <https://github.com/pytest-dev/pytest-cov/pull/364>`_.\n* Various Python support updates (drop EOL 3.4, test against 3.8 final).\n  Contributed by Hugo van Kemenade in\n  `#336 <https://github.com/pytest-dev/pytest-cov/pull/336>`_ and\n  `#367 <https://github.com/pytest-dev/pytest-cov/pull/367>`_.\n* Changed ``--cov-append`` to always enable ``data_suffix`` (a coverage setting).\n  Contributed by Harm Geerts in\n  `#387 <https://github.com/pytest-dev/pytest-cov/pull/387>`_.\n* Changed ``--cov-append`` to handle loading previous data better\n  (fixes various path aliasing issues).\n* Various other testing improvements, github issue templates, example updates.\n* Fixed internal failures that are caused by tests that change the current working directory by\n  ensuring a consistent working directory when coverage is called.\n  See `#306 <https://github.com/pytest-dev/pytest-cov/issues/306>`_ and\n  `coveragepy#881 <https://github.com/nedbat/coveragepy/issues/881>`_\n\n2.8.1 (2019-10-05)\n------------------\n\n* Fixed `#348 <https://github.com/pytest-dev/pytest-cov/issues/348>`_ -\n  regression when only certain reports (html or xml) are used then ``--cov-fail-under`` always fails.\n\n2.8.0 (2019-10-04)\n------------------\n\n* Fixed ``RecursionError`` that can occur when using\n  `cleanup_on_signal <https://pytest-cov.readthedocs.io/en/v2.8.0/subprocess-support.html#if-you-got-custom-signal-handling>`__ or\n  `cleanup_on_sigterm <https://pytest-cov.readthedocs.io/en/v2.8.0/subprocess-support.html#if-you-got-custom-signal-handling>`__.\n  See: `#294 <https://github.com/pytest-dev/pytest-cov/issues/294>`_.\n  The 2.7.x releases of pytest-cov should be considered broken regarding aforementioned cleanup API.\n* Added compatibility with future xdist release that deprecates some internals\n  (match pytest-xdist master/worker terminology).\n  Contributed by Thomas Grainger in `#321 <https://github.com/pytest-dev/pytest-cov/pull/321>`_\n* Fixed breakage that occurs when multiple reporting options are used.\n  Contributed by Thomas Grainger in `#338 <https://github.com/pytest-dev/pytest-cov/pull/338>`_.\n* Changed internals to use a stub instead of ``os.devnull``.\n  Contributed by Thomas Grainger in `#332 <https://github.com/pytest-dev/pytest-cov/pull/332>`_.\n* Added support for Coverage 5.0.\n  Contributed by Ned Batchelder in `#319 <https://github.com/pytest-dev/pytest-cov/pull/319>`_.\n* Added support for float values in ``--cov-fail-under``.\n  Contributed by Martín Gaitán in `#311 <https://github.com/pytest-dev/pytest-cov/pull/311>`_.\n* Various documentation fixes. Contributed by\n  Juanjo Bazán,\n  Andrew Murray and\n  Albert Tugushev in\n  `#298 <https://github.com/pytest-dev/pytest-cov/pull/298>`_,\n  `#299 <https://github.com/pytest-dev/pytest-cov/pull/299>`_ and\n  `#307 <https://github.com/pytest-dev/pytest-cov/pull/307>`_.\n* Various testing improvements. Contributed by\n  Ned Batchelder,\n  Daniel Hahler,\n  Ionel Cristian Mărieș and\n  Hugo van Kemenade in\n  `#313 <https://github.com/pytest-dev/pytest-cov/pull/313>`_,\n  `#314 <https://github.com/pytest-dev/pytest-cov/pull/314>`_,\n  `#315 <https://github.com/pytest-dev/pytest-cov/pull/315>`_,\n  `#316 <https://github.com/pytest-dev/pytest-cov/pull/316>`_,\n  `#325 <https://github.com/pytest-dev/pytest-cov/pull/325>`_,\n  `#326 <https://github.com/pytest-dev/pytest-cov/pull/326>`_,\n  `#334 <https://github.com/pytest-dev/pytest-cov/pull/334>`_ and\n  `#335 <https://github.com/pytest-dev/pytest-cov/pull/335>`_.\n* Added the ``--cov-context`` CLI options that enables coverage contexts. Only works with coverage 5.0+.\n  Contributed by Ned Batchelder in `#345 <https://github.com/pytest-dev/pytest-cov/pull/345>`_.\n\n2.7.1 (2019-05-03)\n------------------\n\n* Fixed source distribution manifest so that garbage ain't included in the tarball.\n\n2.7.0 (2019-05-03)\n------------------\n\n* Fixed ``AttributeError: 'NoneType' object has no attribute 'configure_node'`` error when ``--no-cov`` is used.\n  Contributed by Alexander Shadchin in `#263 <https://github.com/pytest-dev/pytest-cov/pull/263>`_.\n* Various testing and CI improvements. Contributed by Daniel Hahler in\n  `#255 <https://github.com/pytest-dev/pytest-cov/pull/255>`_,\n  `#266 <https://github.com/pytest-dev/pytest-cov/pull/266>`_,\n  `#272 <https://github.com/pytest-dev/pytest-cov/pull/272>`_,\n  `#271 <https://github.com/pytest-dev/pytest-cov/pull/271>`_ and\n  `#269 <https://github.com/pytest-dev/pytest-cov/pull/269>`_.\n* Improved ``pytest_cov.embed.cleanup_on_sigterm`` to be reentrant (signal deliveries while signal handling is\n  running won't break stuff).\n* Added ``pytest_cov.embed.cleanup_on_signal`` for customized cleanup.\n* Improved cleanup code and fixed various issues with leftover data files. All contributed in\n  `#265 <https://github.com/pytest-dev/pytest-cov/pull/265>`_ or\n  `#262 <https://github.com/pytest-dev/pytest-cov/pull/262>`_.\n* Improved examples. Now there are two examples for the common project layouts, complete with working coverage\n  configuration. The examples have CI testing. Contributed in\n  `#267 <https://github.com/pytest-dev/pytest-cov/pull/267>`_.\n* Improved help text for CLI options.\n\n2.6.1 (2019-01-07)\n------------------\n\n* Added support for Pytest 4.1. Contributed by Daniel Hahler and Семён Марьясин in\n  `#253 <https://github.com/pytest-dev/pytest-cov/pull/253>`_ and\n  `#230 <https://github.com/pytest-dev/pytest-cov/pull/230>`_.\n* Various test and docs fixes. Contributed by Daniel Hahler in\n  `#224 <https://github.com/pytest-dev/pytest-cov/pull/224>`_ and\n  `#223 <https://github.com/pytest-dev/pytest-cov/pull/223>`_.\n* Fixed the \"Module already imported\" issue (`#211 <https://github.com/pytest-dev/pytest-cov/issues/211>`_).\n  Contributed by Daniel Hahler in `#228 <https://github.com/pytest-dev/pytest-cov/pull/228>`_.\n\n2.6.0 (2018-09-03)\n------------------\n\n* Dropped support for Python 3 < 3.4, Pytest < 3.5 and Coverage < 4.4.\n* Fixed some documentation formatting. Contributed by Jean Jordaan and Julian.\n* Added an example with ``addopts`` in documentation. Contributed by Samuel Giffard in\n  `#195 <https://github.com/pytest-dev/pytest-cov/pull/195>`_.\n* Fixed ``TypeError: 'NoneType' object is not iterable`` in certain xdist configurations. Contributed by Jeremy Bowman in\n  `#213 <https://github.com/pytest-dev/pytest-cov/pull/213>`_.\n* Added a ``no_cover`` marker and fixture. Fixes\n  `#78 <https://github.com/pytest-dev/pytest-cov/issues/78>`_.\n* Fixed broken ``no_cover`` check when running doctests. Contributed by Terence Honles in\n  `#200 <https://github.com/pytest-dev/pytest-cov/pull/200>`_.\n* Fixed various issues with path normalization in reports (when combining coverage data from parallel mode). Fixes\n  `#130 <https://github.com/pytest-dev/pytest-cov/issues/161>`_.\n  Contributed by Ryan Hiebert & Ionel Cristian Mărieș in\n  `#178 <https://github.com/pytest-dev/pytest-cov/pull/178>`_.\n* Report generation failures don't raise exceptions anymore. A warning will be logged instead. Fixes\n  `#161 <https://github.com/pytest-dev/pytest-cov/issues/161>`_.\n* Fixed multiprocessing issue on Windows (empty env vars are not passed). Fixes\n  `#165 <https://github.com/pytest-dev/pytest-cov/issues/165>`_.\n\n2.5.1 (2017-05-11)\n------------------\n\n* Fixed xdist breakage (regression in ``2.5.0``).\n  Fixes `#157 <https://github.com/pytest-dev/pytest-cov/issues/157>`_.\n* Allow setting custom ``data_file`` name in ``.coveragerc``.\n  Fixes `#145 <https://github.com/pytest-dev/pytest-cov/issues/145>`_.\n  Contributed by Jannis Leidel & Ionel Cristian Mărieș in\n  `#156 <https://github.com/pytest-dev/pytest-cov/pull/156>`_.\n\n2.5.0 (2017-05-09)\n------------------\n\n* Always show a summary when ``--cov-fail-under`` is used. Contributed by Francis Niu in `PR#141\n  <https://github.com/pytest-dev/pytest-cov/pull/141>`_.\n* Added ``--cov-branch`` option. Fixes `#85 <https://github.com/pytest-dev/pytest-cov/issues/85>`_.\n* Improve exception handling in subprocess setup. Fixes `#144 <https://github.com/pytest-dev/pytest-cov/issues/144>`_.\n* Fixed handling when ``--cov`` is used multiple times. Fixes `#151 <https://github.com/pytest-dev/pytest-cov/issues/151>`_.\n\n2.4.0 (2016-10-10)\n------------------\n\n* Added a \"disarm\" option: ``--no-cov``. It will disable coverage measurements. Contributed by Zoltan Kozma in\n  `PR#135 <https://github.com/pytest-dev/pytest-cov/pull/135>`_.\n\n  **WARNING: Do not put this in your configuration files, it's meant to be an one-off for situations where you want to\n  disable coverage from command line.**\n* Fixed broken exception handling on ``.pth`` file. See `#136 <https://github.com/pytest-dev/pytest-cov/issues/136>`_.\n\n2.3.1 (2016-08-07)\n------------------\n\n* Fixed regression causing spurious errors when xdist was used. See `#124\n  <https://github.com/pytest-dev/pytest-cov/issues/124>`_.\n* Fixed DeprecationWarning about incorrect `addoption` use. Contributed by Florian Bruhin in `PR#127\n  <https://github.com/pytest-dev/pytest-cov/pull/127>`_.\n* Fixed deprecated use of funcarg fixture API. Contributed by Daniel Hahler in `PR#125\n  <https://github.com/pytest-dev/pytest-cov/pull/125>`_.\n\n2.3.0 (2016-07-05)\n------------------\n\n* Add support for specifying output location for html, xml, and annotate report.\n  Contributed by Patrick Lannigan in `PR#113 <https://github.com/pytest-dev/pytest-cov/pull/113>`_.\n* Fix bug hiding test failure when cov-fail-under failed.\n* For coverage >= 4.0, match the default behaviour of `coverage report` and\n  error if coverage fails to find the source instead of just printing a warning.\n  Contributed by David Szotten in `PR#116 <https://github.com/pytest-dev/pytest-cov/pull/116>`_.\n* Fixed bug occurred when bare ``--cov`` parameter was used with xdist.\n  Contributed by Michael Elovskikh in `PR#120 <https://github.com/pytest-dev/pytest-cov/pull/120>`_.\n* Add support for ``skip_covered`` and added ``--cov-report=term-skip-covered`` command\n  line options. Contributed by Saurabh Kumar in `PR#115 <https://github.com/pytest-dev/pytest-cov/pull/115>`_.\n\n2.2.1 (2016-01-30)\n------------------\n\n* Fixed incorrect merging of coverage data when xdist was used and coverage was ``>= 4.0``.\n\n2.2.0 (2015-10-04)\n------------------\n\n* Added support for changing working directory in tests. Previously changing working\n  directory would disable coverage measurements in suprocesses.\n* Fixed broken handling for ``--cov-report=annotate``.\n\n2.1.0 (2015-08-23)\n------------------\n\n* Added support for `coverage 4.0b2`.\n* Added the ``--cov-append`` command line options. Contributed by Christian Ledermann\n  in `PR#80 <https://github.com/pytest-dev/pytest-cov/pull/80>`_.\n\n2.0.0 (2015-07-28)\n------------------\n\n* Added ``--cov-fail-under``, akin to the new ``fail_under`` option in `coverage-4.0`\n  (automatically activated if there's a ``[report] fail_under = ...`` in ``.coveragerc``).\n* Changed ``--cov-report=term`` to automatically upgrade to ``--cov-report=term-missing``\n  if there's ``[run] show_missing = True`` in ``.coveragerc``.\n* Changed ``--cov`` so it can be used with no path argument (in which case the source\n  settings from ``.coveragerc`` will be used instead).\n* Fixed `.pth` installation to work in all cases (install, easy_install, wheels, develop etc).\n* Fixed `.pth` uninstallation to work for wheel installs.\n* Support for coverage 4.0.\n* Data file suffixing changed to use coverage's ``data_suffix=True`` option (instead of the\n  custom suffixing).\n* Avoid warning about missing coverage data (just like ``coverage.control.process_startup``).\n* Fixed a race condition when running with xdist (all the workers tried to combine the files).\n  It's possible that this issue is not present in `pytest-cov 1.8.X`.\n\n1.8.2 (2014-11-06)\n------------------\n\n* N/A\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "cover",
+          "coverage",
+          "distributed",
+          "parallel",
+          "py.test",
+          "pytest"
+        ],
+        "author_email": "Marc Schlaich <marc.schlaich@gmail.com>",
+        "maintainer_email": "Ionel Cristian Mărieș <contact@ionelmc.ro>",
+        "license_expression": "MIT",
+        "license_file": [
+          "AUTHORS.rst",
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Framework :: Pytest",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Operating System :: Unix",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Software Development :: Testing",
+          "Topic :: Utilities"
+        ],
+        "requires_dist": [
+          "coverage[toml]>=7.10.6",
+          "pluggy>=1.2",
+          "pytest>=7",
+          "process-tests; extra == 'testing'",
+          "pytest-xdist; extra == 'testing'",
+          "virtualenv; extra == 'testing'"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Sources, https://github.com/pytest-dev/pytest-cov",
+          "Documentation, https://pytest-cov.readthedocs.io/",
+          "Changelog, https://pytest-cov.readthedocs.io/en/latest/changelog.html",
+          "Issue Tracker, https://github.com/pytest-dev/pytest-cov/issues"
+        ],
+        "provides_extra": [
+          "testing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/a7/a7/a600f8f30d4505e89166de51dd121bd540ab8e560e8cf0901de00a81de8c/faker-40.15.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=71ab3c3370da9d2205ab74ffb0fd51273063ad562b3a3bb69d0026a20923e318",
+          "hashes": {
+            "sha256": "71ab3c3370da9d2205ab74ffb0fd51273063ad562b3a3bb69d0026a20923e318"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "Faker",
+        "version": "40.15.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "keywords",
+          "license",
+          "license-file",
+          "platform",
+          "project-url",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "any"
+        ],
+        "summary": "Faker is a Python package that generates fake data for you.",
+        "description": "*Faker* is a Python package that generates fake data for you. Whether\nyou need to bootstrap your database, create good-looking XML documents,\nfill-in your persistence to stress test it, or anonymize data taken from\na production service, Faker is for you.\n\nFaker is heavily inspired by `PHP Faker`_, `Perl Faker`_, and by `Ruby Faker`_.\n\n----\n\n::\n\n    _|_|_|_|          _|\n    _|        _|_|_|  _|  _|      _|_|    _|  _|_|\n    _|_|_|  _|    _|  _|_|      _|_|_|_|  _|_|\n    _|      _|    _|  _|  _|    _|        _|\n    _|        _|_|_|  _|    _|    _|_|_|  _|\n\n|pypi| |build| |coverage| |license|\n\n----\n\nCompatibility\n-------------\n\nStarting from version ``4.0.0``, ``Faker`` dropped support for Python 2 and from version ``5.0.0``\nonly supports Python 3.8 and above. If you still need Python 2 compatibility, please install version ``3.0.1`` in the\nmeantime, and please consider updating your codebase to support Python 3 so you can enjoy the\nlatest features ``Faker`` has to offer. Please see the `extended docs`_ for more details, especially\nif you are upgrading from version ``2.0.4`` and below as there might be breaking changes.\n\nThis package was also previously called ``fake-factory`` which was already deprecated by the end\nof 2016, and much has changed since then, so please ensure that your project and its dependencies\ndo not depend on the old package.\n\nBasic Usage\n-----------\n\nInstall with pip:\n\n.. code:: bash\n\n    pip install Faker\n\nUse ``faker.Faker()`` to create and initialize a faker\ngenerator, which can generate data by accessing properties named after\nthe type of data you want.\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker()\n\n    fake.name()\n    # 'Lucy Cechtelar'\n\n    fake.address()\n    # '426 Jordy Lodge\n    #  Cartwrightshire, SC 88120-6700'\n\n    fake.text()\n    # 'Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi\n    #  beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt\n    #  amet quidem. Iusto deleniti cum autem ad quia aperiam.\n    #  A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui\n    #  quaerat iste minus hic expedita. Consequuntur error magni et laboriosam. Aut aspernatur\n    #  voluptatem sit aliquam. Dolores voluptatum est.\n    #  Aut molestias et maxime. Fugit autem facilis quos vero. Eius quibusdam possimus est.\n    #  Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati.\n    #  Et sint et. Ut ducimus quod nemo ab voluptatum.'\n\nEach call to method ``fake.name()`` yields a different (random) result.\nThis is because faker forwards ``faker.Generator.method_name()`` calls\nto ``faker.Generator.format(method_name)``.\n\n.. code:: python\n\n    for _ in range(10):\n      print(fake.name())\n\n    # 'Adaline Reichel'\n    # 'Dr. Santa Prosacco DVM'\n    # 'Noemy Vandervort V'\n    # 'Lexi O'Conner'\n    # 'Gracie Weber'\n    # 'Roscoe Johns'\n    # 'Emmett Lebsack'\n    # 'Keegan Thiel'\n    # 'Wellington Koelpin II'\n    # 'Ms. Karley Kiehn V'\n\nPytest fixtures\n---------------\n\n``Faker`` also has its own ``pytest`` plugin which provides a ``faker`` fixture you can use in your\ntests. Please check out the `pytest fixture docs` to learn more.\n\nProviders\n---------\n\nEach of the generator properties (like ``name``, ``address``, and\n``lorem``) are called \"fake\". A faker generator has many of them,\npackaged in \"providers\".\n\n.. code:: python\n\n    from faker import Faker\n    from faker.providers import internet\n\n    fake = Faker()\n    fake.add_provider(internet)\n\n    print(fake.ipv4_private())\n\n\nCheck the `extended docs`_ for a list of `bundled providers`_ and a list of\n`community providers`_.\n\nLocalization\n------------\n\n``faker.Faker`` can take a locale as an argument, to return localized\ndata. If no localized provider is found, the factory falls back to the\ndefault LCID string for US english, ie: ``en_US``.\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker('it_IT')\n    for _ in range(10):\n        print(fake.name())\n\n    # 'Elda Palumbo'\n    # 'Pacifico Giordano'\n    # 'Sig. Avide Guerra'\n    # 'Yago Amato'\n    # 'Eustachio Messina'\n    # 'Dott. Violante Lombardo'\n    # 'Sig. Alighieri Monti'\n    # 'Costanzo Costa'\n    # 'Nazzareno Barbieri'\n    # 'Max Coppola'\n\n``faker.Faker`` also supports multiple locales. New in v3.0.0.\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker(['it_IT', 'en_US', 'ja_JP'])\n    for _ in range(10):\n        print(fake.name())\n\n    # 鈴木 陽一\n    # Leslie Moreno\n    # Emma Williams\n    # 渡辺 裕美子\n    # Marcantonio Galuppi\n    # Martha Davis\n    # Kristen Turner\n    # 中津川 春香\n    # Ashley Castillo\n    # 山田 桃子\n\nYou can check available Faker locales in the source code, under the\nproviders package. The localization of Faker is an ongoing process, for\nwhich we need your help. Please don't hesitate to create a localized\nprovider for your own locale and submit a Pull Request (PR).\n\nOptimizations\n-------------\nThe Faker constructor takes a performance-related argument called\n``use_weighting``. It specifies whether to attempt to have the frequency\nof values match real-world frequencies (e.g. the English name Gary would\nbe much more frequent than the name Lorimer). If ``use_weighting`` is ``False``,\nthen all items have an equal chance of being selected, and the selection\nprocess is much faster. The default is ``True``.\n\nCommand line usage\n------------------\n\nWhen installed, you can invoke faker from the command-line:\n\n.. code:: console\n\n    faker [-h] [--version] [-o output]\n          [-l {bg_BG,cs_CZ,...,zh_CN,zh_TW}]\n          [-r REPEAT] [-s SEP]\n          [-i package.containing.custom_provider]\n          [fake] [fake argument [fake argument ...]]\n\nWhere:\n\n-  ``faker``: is the script when installed in your environment, in\n   development you could use ``python -m faker`` instead\n\n-  ``-h``, ``--help``: shows a help message\n\n-  ``--version``: shows the program's version number\n\n-  ``-o FILENAME``: redirects the output to the specified filename\n\n-  ``-l {bg_BG,cs_CZ,...,zh_CN,zh_TW}``: allows use of a localized\n   provider\n\n-  ``-r REPEAT``: will generate a specified number of outputs\n\n-  ``-s SEP``: will generate the specified separator after each\n   generated output\n\n-  ``-i package.containing.custom_provider`` additional custom provider to use. Note this\n   is the import path of the package containing your Provider class, not the\n   custom Provider class itself. Can be repeated to add multiple providers.\n\n-  ``fake``: is the name of the fake to generate an output for, such as\n   ``name``, ``address``, or ``text``\n\n-  ``[fake argument ...]``: optional arguments to pass to the fake (e.g. the\n   profile fake takes an optional list of comma separated field names as the\n   first argument)\n\nExamples:\n\n.. code:: console\n\n    $ faker address\n    968 Bahringer Garden Apt. 722\n    Kristinaland, NJ 09890\n\n    $ faker -l de_DE address\n    Samira-Niemeier-Allee 56\n    94812 Biedenkopf\n\n    $ faker profile ssn,birthdate\n    {'ssn': '628-10-1085', 'birthdate': '2008-03-29'}\n\n    $ faker -r=3 -s=\";\" name\n    Willam Kertzmann;\n    Josiah Maggio;\n    Gayla Schmitt;\n\n    $ faker -i faker_credit_score credit_score_full\n    Experian/Fair Isaac Risk Model V2SM\n    Experian\n    801\n\nHow to create a Provider\n------------------------\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker()\n\n    # first, import a similar Provider or use the default one\n    from faker.providers import BaseProvider\n\n    # create new provider class\n    class MyProvider(BaseProvider):\n        def foo(self) -> str:\n            return 'bar'\n\n    # then add new provider to faker instance\n    fake.add_provider(MyProvider)\n\n    # now you can use:\n    fake.foo()\n    # 'bar'\n\n\nHow to create a Dynamic Provider\n--------------------------------\n\nDynamic providers can read elements from an external source.\n\n.. code:: python\n\n    from faker import Faker\n    from faker.providers import DynamicProvider\n\n    medical_professions_provider = DynamicProvider(\n         provider_name=\"medical_profession\",\n         elements=[\"dr.\", \"doctor\", \"nurse\", \"surgeon\", \"clerk\"],\n    )\n\n    fake = Faker()\n\n    # then add new provider to faker instance\n    fake.add_provider(medical_professions_provider)\n\n    # now you can use:\n    fake.medical_profession()\n    # 'dr.'\n\nHow to customize the Lorem Provider\n-----------------------------------\n\nYou can provide your own sets of words if you don't want to use the\ndefault lorem ipsum one. The following example shows how to do it with a list of words picked from `cakeipsum <http://www.cupcakeipsum.com/>`__ :\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker()\n\n    my_word_list = [\n    'danish','cheesecake','sugar',\n    'Lollipop','wafer','Gummies',\n    'sesame','Jelly','beans',\n    'pie','bar','Ice','oat' ]\n\n    fake.sentence()\n    # 'Expedita at beatae voluptatibus nulla omnis.'\n\n    fake.sentence(ext_word_list=my_word_list)\n    # 'Oat beans oat Lollipop bar cheesecake.'\n\n\nHow to use with Factory Boy\n---------------------------\n\n`Factory Boy` already ships with integration with ``Faker``. Simply use the\n``factory.Faker`` method of ``factory_boy``:\n\n.. code:: python\n\n    import factory\n    from myapp.models import Book\n\n    class BookFactory(factory.Factory):\n        class Meta:\n            model = Book\n\n        title = factory.Faker('sentence', nb_words=4)\n        author_name = factory.Faker('name')\n\nAccessing the `random` instance\n-------------------------------\n\nThe ``.random`` property on the generator returns the instance of\n``random.Random`` used to generate the values:\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker()\n    fake.random\n    fake.random.getstate()\n\nBy default all generators share the same instance of ``random.Random``, which\ncan be accessed with ``from faker.generator import random``. Using this may\nbe useful for plugins that want to affect all faker instances.\n\nUnique values\n-------------\n\nThrough use of the ``.unique`` property on the generator, you can guarantee\nthat any generated values are unique for this specific instance.\n\n.. code:: python\n\n   from faker import Faker\n   fake = Faker()\n   names = [fake.unique.first_name() for i in range(500)]\n   assert len(set(names)) == len(names)\n\nOn ``Faker`` instances with multiple locales, you can specify the locale to use\nfor the unique values by using the subscript notation:\n\n.. code:: python\n\n   from faker import Faker\n   fake = Faker(['en_US', 'fr_FR'])\n   names = [fake.unique[\"en_US\"].first_name() for i in range(500)]\n   assert len(set(names)) == len(names)\n\nCalling ``fake.unique.clear()`` clears the already seen values.\n\nNote, to avoid infinite loops, after a number of attempts to find a unique\nvalue, Faker will throw a ``UniquenessException``. Beware of the `birthday\nparadox <https://en.wikipedia.org/wiki/Birthday_problem>`_, collisions\nare more likely than you'd think.\n\n\n.. code:: python\n\n   from faker import Faker\n\n   fake = Faker()\n   for i in range(3):\n        # Raises a UniquenessException\n        fake.unique.boolean()\n\nIn addition, only hashable arguments and return values can be used\nwith ``.unique``.\n\nSeeding the Generator\n---------------------\n\nWhen using Faker for unit testing, you will often want to generate the same\ndata set. For convenience, the generator also provides a ``seed()`` method,\nwhich seeds the shared random number generator. A Seed produces the same result\nwhen the same methods with the same version of faker are called.\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker()\n    Faker.seed(4321)\n\n    print(fake.name())\n    # 'Margaret Boehm'\n\nEach generator can also be switched to use its own instance of ``random.Random``,\nseparated from the shared one, by using the ``seed_instance()`` method, which acts\nthe same way. For example:\n\n.. code:: python\n\n    from faker import Faker\n    fake = Faker()\n    fake.seed_instance(4321)\n\n    print(fake.name())\n    # 'Margaret Boehm'\n\nPlease note that as we keep updating datasets, results are not guaranteed to be\nconsistent across patch versions. If you hardcode results in your test, make sure\nyou pinned the version of ``Faker`` down to the patch number.\n\nIf you are using ``pytest``, you can seed the ``faker`` fixture by defining a ``faker_seed``\nfixture. Please check out the `pytest fixture docs` to learn more.\n\nTests\n-----\n\nRun tests:\n\n.. code:: bash\n\n    $ tox\n\nWrite documentation for the providers of the default locale:\n\n.. code:: bash\n\n    $ python -m faker > docs.txt\n\nWrite documentation for the providers of a specific locale:\n\n.. code:: bash\n\n    $ python -m faker --lang=de_DE > docs_de.txt\n\n\nContribute\n----------\n\nPlease see `CONTRIBUTING`_.\n\nLicense\n-------\n\nFaker is released under the MIT License. See the bundled `LICENSE`_ file\nfor details.\n\nCredits\n-------\n\n-  `FZaninotto`_ / `PHP Faker`_\n-  `Distribute`_\n-  `Buildout`_\n-  `modern-package-template`_\n\n\n.. _FZaninotto: https://github.com/fzaninotto\n.. _PHP Faker: https://github.com/fzaninotto/Faker\n.. _Perl Faker: http://search.cpan.org/~jasonk/Data-Faker-0.07/\n.. _Ruby Faker: https://github.com/stympy/faker\n.. _Distribute: https://pypi.org/project/distribute/\n.. _Buildout: http://www.buildout.org/\n.. _modern-package-template: https://pypi.org/project/modern-package-template/\n.. _extended docs: https://faker.readthedocs.io/en/stable/\n.. _bundled providers: https://faker.readthedocs.io/en/stable/providers.html\n.. _community providers: https://faker.readthedocs.io/en/stable/communityproviders.html\n.. _pytest fixture docs: https://faker.readthedocs.io/en/master/pytest-fixtures.html\n.. _LICENSE: https://github.com/joke2k/faker/blob/master/LICENSE.txt\n.. _CONTRIBUTING: https://github.com/joke2k/faker/blob/master/CONTRIBUTING.rst\n.. _Factory Boy: https://github.com/FactoryBoy/factory_boy\n\n.. |pypi| image:: https://img.shields.io/pypi/v/Faker.svg?style=flat-square&label=version\n    :target: https://pypi.org/project/Faker/\n    :alt: Latest version released on PyPI\n\n.. |coverage| image:: https://img.shields.io/coveralls/joke2k/faker/master.svg?style=flat-square\n    :target: https://coveralls.io/r/joke2k/faker?branch=master\n    :alt: Test coverage\n\n.. |build| image:: https://github.com/joke2k/faker/actions/workflows/ci.yml/badge.svg\n    :target: https://github.com/joke2k/faker/actions/workflows/ci.yml\n    :alt: Build status of the master branch\n\n.. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square\n    :target: https://raw.githubusercontent.com/joke2k/faker/master/LICENSE.txt\n    :alt: Package license\n",
+        "keywords": [
+          "faker",
+          "fixtures",
+          "data",
+          "test",
+          "mock",
+          "generator"
+        ],
+        "home_page": "https://github.com/joke2k/faker",
+        "author": "joke2k",
+        "author_email": "joke2k@gmail.com",
+        "license": "MIT License",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Software Development :: Testing",
+          "Topic :: Utilities",
+          "License :: OSI Approved :: MIT License"
+        ],
+        "requires_dist": [
+          "tzdata; platform_system == \"Windows\"",
+          "tzdata; extra == \"tzdata\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Bug Tracker, https://github.com/joke2k/faker/issues",
+          "Changes, https://github.com/joke2k/faker/blob/master/CHANGELOG.md",
+          "Documentation, http://faker.rtfd.org/",
+          "Source Code, https://github.com/joke2k/faker"
+        ],
+        "provides_extra": [
+          "tzdata"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/6f/5f/b5370068b2f57787454592ed7dcd1002f0f1703b7db1fa30f6a325a4ca6e/coverage-7.14.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "archive_info": {
+          "hash": "sha256=9d1aa57a1dc8e05bdc42e81c5d671d849577aeedf279f4c449d6d286f9ed88ca",
+          "hashes": {
+            "sha256": "9d1aa57a1dc8e05bdc42e81c5d671d849577aeedf279f4c449d6d286f9ed88ca"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "coverage",
+        "version": "7.14.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "description-content-type",
+          "home-page",
+          "keywords",
+          "license",
+          "license-file",
+          "project-url",
+          "provides-extra",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "Code coverage measurement for Python",
+        "description": ".. Licensed under the Apache License: http://www.apache.org/licenses/LICENSE-2.0\n.. For details: https://github.com/coveragepy/coveragepy/blob/main/NOTICE.txt\n\n===========\nCoverage.py\n===========\n\nCode coverage measurement for Python.\n\n.. image:: https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg\n    :target: https://vshymanskyy.github.io/StandWithUkraine\n    :alt: Stand with Ukraine\n\n-------------\n\n|  |kit| |license| |versions|\n|  |test-status| |quality-status| |docs| |metacov|\n|  |tidelift| |sponsor| |stars| |mastodon-coveragepy| |mastodon-nedbat|\n   |bluesky-nedbat|\n\nCoverage.py measures code coverage, typically during test execution. It uses\nthe code analysis tools and tracing hooks provided in the Python standard\nlibrary to determine which lines are executable, and which have been executed.\n\nCoverage.py runs on these versions of Python:\n\n.. PYVERSIONS\n\n* Python 3.10 through 3.15 beta, including free-threading.\n* PyPy3 versions 3.10 and 3.11.\n\nDocumentation is on `Read the Docs`_.  Code repository and issue tracker are on\n`GitHub`_.\n\n.. _Read the Docs: https://coverage.readthedocs.io/en/7.14.0/\n.. _GitHub: https://github.com/coveragepy/coveragepy\n\n\nFor Enterprise\n--------------\n\n.. |tideliftlogo| image:: https://nedbatchelder.com/pix/Tidelift_Logo_small.png\n   :alt: Tidelift\n   :target: https://tidelift.com/subscription/pkg/pypi-coverage?utm_source=pypi-coverage&utm_medium=referral&utm_campaign=readme\n\n.. list-table::\n   :widths: 10 100\n\n   * - |tideliftlogo|\n     - `Available as part of the Tidelift Subscription. <https://tidelift.com/subscription/pkg/pypi-coverage?utm_source=pypi-coverage&utm_medium=referral&utm_campaign=readme>`_\n       Coverage and thousands of other packages are working with\n       Tidelift to deliver one enterprise subscription that covers all of the open\n       source you use.  If you want the flexibility of open source and the confidence\n       of commercial-grade software, this is for you.\n       `Learn more. <https://tidelift.com/subscription/pkg/pypi-coverage?utm_source=pypi-coverage&utm_medium=referral&utm_campaign=readme>`_\n\n\nGetting Started\n---------------\n\nLooking to run ``coverage`` on your test suite? See the `Quick Start section`_\nof the docs.\n\n.. _Quick Start section: https://coverage.readthedocs.io/en/7.14.0/#quick-start\n\n\nChange history\n--------------\n\nThe complete history of changes is on the `change history page`_.\n\n.. _change history page: https://coverage.readthedocs.io/en/7.14.0/changes.html\n\n\nCode of Conduct\n---------------\n\nEveryone participating in the coverage.py project is expected to treat other\npeople with respect and to follow the guidelines articulated in the `Python\nCommunity Code of Conduct`_.\n\n.. _Python Community Code of Conduct: https://www.python.org/psf/codeofconduct/\n\n\nContributing\n------------\n\nFound a bug? Want to help improve the code or documentation? See the\n`Contributing section`_ of the docs.\n\n.. _Contributing section: https://coverage.readthedocs.io/en/7.14.0/contributing.html\n\n\nSecurity\n--------\n\nTo report a security vulnerability, please use the `Tidelift security\ncontact`_.  Tidelift will coordinate the fix and disclosure.\n\n.. _Tidelift security contact: https://tidelift.com/security\n\n\nLicense\n-------\n\nLicensed under the `Apache 2.0 License`_.  For details, see `NOTICE.txt`_.\n\n.. _Apache 2.0 License: http://www.apache.org/licenses/LICENSE-2.0\n.. _NOTICE.txt: https://github.com/coveragepy/coveragepy/blob/main/NOTICE.txt\n\n\n.. |test-status| image:: https://github.com/coveragepy/coveragepy/actions/workflows/testsuite.yml/badge.svg?branch=main&event=push\n    :target: https://github.com/coveragepy/coveragepy/actions/workflows/testsuite.yml\n    :alt: Test suite status\n.. |quality-status| image:: https://github.com/coveragepy/coveragepy/actions/workflows/quality.yml/badge.svg?branch=main&event=push\n    :target: https://github.com/coveragepy/coveragepy/actions/workflows/quality.yml\n    :alt: Quality check status\n.. |docs| image:: https://readthedocs.org/projects/coverage/badge/?version=latest&style=flat\n    :target: https://coverage.readthedocs.io/en/7.14.0/\n    :alt: Documentation\n.. |kit| image:: https://img.shields.io/pypi/v/coverage\n    :target: https://pypi.org/project/coverage/\n    :alt: PyPI status\n.. |versions| image:: https://img.shields.io/pypi/pyversions/coverage.svg?logo=python&logoColor=FBE072\n    :target: https://pypi.org/project/coverage/\n    :alt: Python versions supported\n.. |license| image:: https://img.shields.io/pypi/l/coverage.svg\n    :target: https://github.com/coveragepy/coveragepy/blob/main/LICENSE.txt\n    :alt: License\n.. |metacov| image:: https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/nedbat/8c6980f77988a327348f9b02bbaf67f5/raw/metacov.json\n    :target: https://coveragepy.github.io/metacov-reports/latest.html\n    :alt: Coverage reports\n.. |tidelift| image:: https://tidelift.com/badges/package/pypi/coverage\n    :target: https://tidelift.com/subscription/pkg/pypi-coverage?utm_source=pypi-coverage&utm_medium=referral&utm_campaign=readme\n    :alt: Tidelift\n.. |stars| image:: https://img.shields.io/github/stars/coveragepy/coveragepy.svg?logo=github&style=flat\n    :target: https://github.com/coveragepy/coveragepy/stargazers\n    :alt: GitHub stars\n.. |mastodon-nedbat| image:: https://img.shields.io/badge/dynamic/json?style=flat&labelColor=450657&logo=mastodon&logoColor=ffffff&label=@nedbat&query=followers_count&url=https%3A%2F%2Fhachyderm.io%2Fapi%2Fv1%2Faccounts%2Flookup%3Facct=nedbat\n    :target: https://hachyderm.io/@nedbat\n    :alt: nedbat on Mastodon\n.. |mastodon-coveragepy| image:: https://img.shields.io/badge/dynamic/json?style=flat&labelColor=450657&logo=mastodon&logoColor=ffffff&label=@coveragepy&query=followers_count&url=https%3A%2F%2Fhachyderm.io%2Fapi%2Fv1%2Faccounts%2Flookup%3Facct=coveragepy\n    :target: https://hachyderm.io/@coveragepy\n    :alt: coveragepy on Mastodon\n.. |bluesky-nedbat| image:: https://img.shields.io/badge/dynamic/json?style=flat&color=96a3b0&labelColor=3686f7&logo=icloud&logoColor=white&label=@nedbat&url=https%3A%2F%2Fpublic.api.bsky.app%2Fxrpc%2Fapp.bsky.actor.getProfile%3Factor=nedbat.com&query=followersCount\n    :target: https://bsky.app/profile/nedbat.com\n    :alt: nedbat on Bluesky\n.. |sponsor| image:: https://img.shields.io/badge/%E2%9D%A4-Sponsor%20me-brightgreen?style=flat&logo=GitHub\n    :target: https://github.com/sponsors/nedbat\n    :alt: Sponsor me on GitHub\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "code",
+          "coverage",
+          "testing"
+        ],
+        "home_page": "https://github.com/coveragepy/coveragepy",
+        "author": "Ned Batchelder and 255 others",
+        "author_email": "ned@nedbatchelder.com",
+        "license": "Apache-2.0",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Free Threading :: 3 - Stable",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Software Development :: Quality Assurance",
+          "Topic :: Software Development :: Testing"
+        ],
+        "requires_dist": [
+          "tomli; python_full_version <= \"3.11.0a6\" and extra == \"toml\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Documentation, https://coverage.readthedocs.io/en/7.14.0",
+          "Funding, https://tidelift.com/subscription/pkg/pypi-coverage?utm_source=pypi-coverage&utm_medium=referral&utm_campaign=pypi",
+          "Issues, https://github.com/coveragepy/coveragepy/issues",
+          "Mastodon, https://hachyderm.io/@coveragepy",
+          "Mastodon (nedbat), https://hachyderm.io/@nedbat"
+        ],
+        "provides_extra": [
+          "toml"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+          "hashes": {
+            "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "h11",
+        "version": "0.16.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1",
+        "description": "h11\n===\n\n.. image:: https://travis-ci.org/python-hyper/h11.svg?branch=master\n   :target: https://travis-ci.org/python-hyper/h11\n   :alt: Automated test status\n\n.. image:: https://codecov.io/gh/python-hyper/h11/branch/master/graph/badge.svg\n   :target: https://codecov.io/gh/python-hyper/h11\n   :alt: Test coverage\n\n.. image:: https://readthedocs.org/projects/h11/badge/?version=latest\n   :target: http://h11.readthedocs.io/en/latest/?badge=latest\n   :alt: Documentation Status\n\nThis is a little HTTP/1.1 library written from scratch in Python,\nheavily inspired by `hyper-h2 <https://hyper-h2.readthedocs.io/>`_.\n\nIt's a \"bring-your-own-I/O\" library; h11 contains no IO code\nwhatsoever. This means you can hook h11 up to your favorite network\nAPI, and that could be anything you want: synchronous, threaded,\nasynchronous, or your own implementation of `RFC 6214\n<https://tools.ietf.org/html/rfc6214>`_ -- h11 won't judge you.\n(Compare this to the current state of the art, where every time a `new\nnetwork API <https://trio.readthedocs.io/>`_ comes along then someone\ngets to start over reimplementing the entire HTTP protocol from\nscratch.) Cory Benfield made an `excellent blog post describing the\nbenefits of this approach\n<https://lukasa.co.uk/2015/10/The_New_Hyper/>`_, or if you like video\nthen here's his `PyCon 2016 talk on the same theme\n<https://www.youtube.com/watch?v=7cC3_jGwl_U>`_.\n\nThis also means that h11 is not immediately useful out of the box:\nit's a toolkit for building programs that speak HTTP, not something\nthat could directly replace ``requests`` or ``twisted.web`` or\nwhatever. But h11 makes it much easier to implement something like\n``requests`` or ``twisted.web``.\n\nAt a high level, working with h11 goes like this:\n\n1) First, create an ``h11.Connection`` object to track the state of a\n   single HTTP/1.1 connection.\n\n2) When you read data off the network, pass it to\n   ``conn.receive_data(...)``; you'll get back a list of objects\n   representing high-level HTTP \"events\".\n\n3) When you want to send a high-level HTTP event, create the\n   corresponding \"event\" object and pass it to ``conn.send(...)``;\n   this will give you back some bytes that you can then push out\n   through the network.\n\nFor example, a client might instantiate and then send a\n``h11.Request`` object, then zero or more ``h11.Data`` objects for the\nrequest body (e.g., if this is a POST), and then a\n``h11.EndOfMessage`` to indicate the end of the message. Then the\nserver would then send back a ``h11.Response``, some ``h11.Data``, and\nits own ``h11.EndOfMessage``. If either side violates the protocol,\nyou'll get a ``h11.ProtocolError`` exception.\n\nh11 is suitable for implementing both servers and clients, and has a\npleasantly symmetric API: the events you send as a client are exactly\nthe ones that you receive as a server and vice-versa.\n\n`Here's an example of a tiny HTTP client\n<https://github.com/python-hyper/h11/blob/master/examples/basic-client.py>`_\n\nIt also has `a fine manual <https://h11.readthedocs.io/>`_.\n\nFAQ\n---\n\n*Whyyyyy?*\n\nI wanted to play with HTTP in `Curio\n<https://curio.readthedocs.io/en/latest/tutorial.html>`__ and `Trio\n<https://trio.readthedocs.io>`__, which at the time didn't have any\nHTTP libraries. So I thought, no big deal, Python has, like, a dozen\ndifferent implementations of HTTP, surely I can find one that's\nreusable. I didn't find one, but I did find Cory's call-to-arms\nblog-post. So I figured, well, fine, if I have to implement HTTP from\nscratch, at least I can make sure no-one *else* has to ever again.\n\n*Should I use it?*\n\nMaybe. You should be aware that it's a very young project. But, it's\nfeature complete and has an exhaustive test-suite and complete docs,\nso the next step is for people to try using it and see how it goes\n:-). If you do then please let us know -- if nothing else we'll want\nto talk to you before making any incompatible changes!\n\n*What are the features/limitations?*\n\nRoughly speaking, it's trying to be a robust, complete, and non-hacky\nimplementation of the first \"chapter\" of the HTTP/1.1 spec: `RFC 7230:\nHTTP/1.1 Message Syntax and Routing\n<https://tools.ietf.org/html/rfc7230>`_. That is, it mostly focuses on\nimplementing HTTP at the level of taking bytes on and off the wire,\nand the headers related to that, and tries to be anal about spec\nconformance. It doesn't know about higher-level concerns like URL\nrouting, conditional GETs, cross-origin cookie policies, or content\nnegotiation. But it does know how to take care of framing,\ncross-version differences in keep-alive handling, and the \"obsolete\nline folding\" rule, so you can focus your energies on the hard /\ninteresting parts for your application, and it tries to support the\nfull specification in the sense that any useful HTTP/1.1 conformant\napplication should be able to use h11.\n\nIt's pure Python, and has no dependencies outside of the standard\nlibrary.\n\nIt has a test suite with 100.0% coverage for both statements and\nbranches.\n\nCurrently it supports Python 3 (testing on 3.8-3.12) and PyPy 3.\nThe last Python 2-compatible version was h11 0.11.x.\n(Originally it had a Cython wrapper for `http-parser\n<https://github.com/nodejs/http-parser>`_ and a beautiful nested state\nmachine implemented with ``yield from`` to postprocess the output. But\nI had to take these out -- the new *parser* needs fewer lines-of-code\nthan the old *parser wrapper*, is written in pure Python, uses no\nexotic language syntax, and has more features. It's sad, really; that\nold state machine was really slick. I just need a few sentences here\nto mourn that.)\n\nI don't know how fast it is. I haven't benchmarked or profiled it yet,\nso it's probably got a few pointless hot spots, and I've been trying\nto err on the side of simplicity and robustness instead of\nmicro-optimization. But at the architectural level I tried hard to\navoid fundamentally bad decisions, e.g., I believe that all the\nparsing algorithms remain linear-time even in the face of pathological\ninput like slowloris, and there are no byte-by-byte loops. (I also\nbelieve that it maintains bounded memory usage in the face of\narbitrary/pathological input.)\n\nThe whole library is ~800 lines-of-code. You can read and understand\nthe whole thing in less than an hour. Most of the energy invested in\nthis so far has been spent on trying to keep things simple by\nminimizing special-cases and ad hoc state manipulation; even though it\nis now quite small and simple, I'm still annoyed that I haven't\nfigured out how to make it even smaller and simpler. (Unfortunately,\nHTTP does not lend itself to simplicity.)\n\nThe API is ~feature complete and I don't expect the general outlines\nto change much, but you can't judge an API's ergonomics until you\nactually document and use it, so I'd expect some changes in the\ndetails.\n\n*How do I try it?*\n\n.. code-block:: sh\n\n  $ pip install h11\n  $ git clone git@github.com:python-hyper/h11\n  $ cd h11/examples\n  $ python basic-client.py\n\nand go from there.\n\n*License?*\n\nMIT\n\n*Code of conduct?*\n\nContributors are requested to follow our `code of conduct\n<https://github.com/python-hyper/h11/blob/master/CODE_OF_CONDUCT.md>`_ in\nall project spaces.\n",
+        "home_page": "https://github.com/python-hyper/h11",
+        "author": "Nathaniel J. Smith",
+        "author_email": "njs@pobox.com",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 3 - Alpha",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: System :: Networking"
+        ],
+        "requires_python": ">=3.8"
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/cb/b1/3846dd7f199d53cb17f49cba7e651e9ce294d8497c8c150530ed11865bb8/iniconfig-2.3.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12",
+          "hashes": {
+            "sha256": "f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "iniconfig",
+        "version": "2.3.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "brain-dead simple config-ini parsing",
+        "description": "iniconfig: brain-dead simple parsing of ini files\n=======================================================\n\niniconfig is a small and simple INI-file parser module\nhaving a unique set of features:\n\n* maintains order of sections and entries\n* supports multi-line values with or without line-continuations\n* supports \"#\" comments everywhere\n* raises errors with proper line-numbers\n* no bells and whistles like automatic substitutions\n* iniconfig raises an Error if two sections have the same name.\n\nIf you encounter issues or have feature wishes please report them to:\n\n    https://github.com/RonnyPfannschmidt/iniconfig/issues\n\nBasic Example\n===================================\n\nIf you have an ini file like this:\n\n.. code-block:: ini\n\n    # content of example.ini\n    [section1] # comment\n    name1=value1  # comment\n    name1b=value1,value2  # comment\n\n    [section2]\n    name2=\n        line1\n        line2\n\nthen you can do:\n\n.. code-block:: pycon\n\n    >>> import iniconfig\n    >>> ini = iniconfig.IniConfig(\"example.ini\")\n    >>> ini['section1']['name1'] # raises KeyError if not exists\n    'value1'\n    >>> ini.get('section1', 'name1b', [], lambda x: x.split(\",\"))\n    ['value1', 'value2']\n    >>> ini.get('section1', 'notexist', [], lambda x: x.split(\",\"))\n    []\n    >>> [x.name for x in list(ini)]\n    ['section1', 'section2']\n    >>> list(list(ini)[0].items())\n    [('name1', 'value1'), ('name1b', 'value1,value2')]\n    >>> 'section1' in ini\n    True\n    >>> 'inexistendsection' in ini\n    False\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>, Holger Krekel <holger.krekel@gmail.com>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Intended Audience :: Developers",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Utilities"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/pytest-dev/iniconfig"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+          "hashes": {
+            "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "packaging",
+        "version": "26.2",
+        "summary": "Core utilities for Python packages",
+        "description": "packaging\n=========\n\n.. start-intro\n\nReusable core utilities for various Python Packaging\n`interoperability specifications <https://packaging.python.org/specifications/>`_.\n\nThis library provides utilities that implement the interoperability\nspecifications which have clearly one correct behaviour (eg: :pep:`440`)\nor benefit greatly from having a single shared implementation (eg: :pep:`425`).\n\n.. end-intro\n\nThe ``packaging`` project includes the following: version handling, specifiers,\nmarkers, requirements, tags, metadata, lockfiles, utilities.\n\nDocumentation\n-------------\n\nThe `documentation`_ provides information and the API for the following:\n\n- Version Handling\n- Specifiers\n- Markers\n- Licenses\n- Requirements\n- Metadata\n- Tags\n- Lockfiles (pylock)\n- Direct URL helpers\n- Dependency groups\n- Errors\n- Utilities\n\nInstallation\n------------\n\nUse ``pip`` to install these utilities::\n\n    pip install packaging\n\nThe ``packaging`` library uses calendar-based versioning (``YY.N``).\n\nDiscussion\n----------\n\nIf you run into bugs, you can file them in our `issue tracker`_.\n\nYou can also join discussions on `GitHub Discussions`_ to ask questions or get involved.\n\n.. _`documentation`: https://packaging.pypa.io/\n.. _`issue tracker`: https://github.com/pypa/packaging/issues\n.. _`GitHub Discussions`: https://github.com/pypa/packaging/discussions\n\n\nCode of Conduct\n---------------\n\nEveryone interacting in the packaging project's codebases, issue trackers, chat\nrooms, and mailing lists is expected to follow the `PSF Code of Conduct`_.\n\n.. _PSF Code of Conduct: https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md\n\nContributing\n------------\n\nThe ``CONTRIBUTING.rst`` file outlines how to contribute to this project as\nwell as how to report a potential security issue. The documentation for this\nproject also covers information about `project development`_ and `security`_.\n\n.. _`project development`: https://packaging.pypa.io/en/latest/development/\n.. _`security`: https://packaging.pypa.io/en/latest/security/\n\nProject History\n---------------\n\nPlease review the ``CHANGELOG.rst`` file or the `Changelog documentation`_ for\nrecent changes and project history.\n\n.. _`Changelog documentation`: https://packaging.pypa.io/en/latest/changelog/\n\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Donald Stufft <donald@stufft.io>",
+        "license_expression": "Apache-2.0 OR BSD-2-Clause",
+        "license_file": [
+          "LICENSE",
+          "LICENSE.APACHE",
+          "LICENSE.BSD"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Free Threading :: 4 - Resilient",
+          "Typing :: Typed"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Documentation, https://packaging.pypa.io/",
+          "Source, https://github.com/pypa/packaging"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176",
+          "hashes": {
+            "sha256": "81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "Pygments",
+        "version": "2.20.0",
+        "summary": "Pygments is a syntax highlighting package written in Python.",
+        "description": "Pygments\n~~~~~~~~\n\nPygments is a syntax highlighting package written in Python.\n\nIt is a generic syntax highlighter suitable for use in code hosting, forums,\nwikis or other applications that need to prettify source code.  Highlights\nare:\n\n* a wide range of over 500 languages and other text formats is supported\n* special attention is paid to details, increasing quality by a fair amount\n* support for new languages and formats are added easily\n* a number of output formats, presently HTML, LaTeX, RTF, SVG, all image\n  formats that PIL supports and ANSI sequences\n* it is usable as a command-line tool and as a library\n\nCopyright 2006-present by the Pygments team, see ``AUTHORS``.\nLicensed under the BSD, see ``LICENSE`` for details.\n",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "syntax",
+          "highlighting"
+        ],
+        "author_email": "Georg Brandl <georg@python.org>",
+        "maintainer": "Matthäus G. Chajdas",
+        "maintainer_email": "Georg Brandl <georg@python.org>, Jean Abou Samra <jean@abou-samra.fr>",
+        "license_expression": "BSD-2-Clause",
+        "license_file": [
+          "AUTHORS",
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 6 - Mature",
+          "Intended Audience :: Developers",
+          "Intended Audience :: End Users/Desktop",
+          "Intended Audience :: System Administrators",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Text Processing :: Filters",
+          "Topic :: Utilities"
+        ],
+        "requires_dist": [
+          "colorama>=0.4.6; extra == 'windows-terminal'"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Homepage, https://pygments.org",
+          "Documentation, https://pygments.org/docs",
+          "Source, https://github.com/pygments/pygments",
+          "Bug Tracker, https://github.com/pygments/pygments/issues",
+          "Changelog, https://github.com/pygments/pygments/blob/master/CHANGES"
+        ],
+        "provides_extra": [
+          "plugins",
+          "windows-terminal"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/da/42/e921fccf5015463e32a3cf6ee7f980a6ed0f395ceeaa45060b61d86486c2/anyio-4.13.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708",
+          "hashes": {
+            "sha256": "08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "anyio",
+        "version": "4.13.0",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "High-level concurrency and networking framework on top of asyncio or Trio",
+        "description": ".. image:: https://github.com/agronholm/anyio/actions/workflows/test.yml/badge.svg\n  :target: https://github.com/agronholm/anyio/actions/workflows/test.yml\n  :alt: Build Status\n.. image:: https://coveralls.io/repos/github/agronholm/anyio/badge.svg?branch=master\n  :target: https://coveralls.io/github/agronholm/anyio?branch=master\n  :alt: Code Coverage\n.. image:: https://readthedocs.org/projects/anyio/badge/?version=latest\n  :target: https://anyio.readthedocs.io/en/latest/?badge=latest\n  :alt: Documentation\n.. image:: https://badges.gitter.im/gitterHQ/gitter.svg\n  :target: https://gitter.im/python-trio/AnyIO\n  :alt: Gitter chat\n.. image:: https://tidelift.com/badges/package/pypi/anyio\n  :target: https://tidelift.com/subscription/pkg/pypi-anyio\n  :alt: Tidelift\n\nAnyIO is an asynchronous networking and concurrency library that works on top of either asyncio_ or\nTrio_. It implements Trio-like `structured concurrency`_ (SC) on top of asyncio and works in harmony\nwith the native SC of Trio itself.\n\nApplications and libraries written against AnyIO's API will run unmodified on either asyncio_ or\nTrio_. AnyIO can also be adopted into a library or application incrementally – bit by bit, no full\nrefactoring necessary. It will blend in with the native libraries of your chosen backend.\n\nTo find out why you might want to use AnyIO's APIs instead of asyncio's, you can read about it\n`here <https://anyio.readthedocs.io/en/stable/why.html>`_.\n\nDocumentation\n-------------\n\nView full documentation at: https://anyio.readthedocs.io/\n\nFeatures\n--------\n\nAnyIO offers the following functionality:\n\n* Task groups (nurseries_ in trio terminology)\n* High-level networking (TCP, UDP and UNIX sockets)\n\n  * `Happy eyeballs`_ algorithm for TCP connections (more robust than that of asyncio on Python\n    3.8)\n  * async/await style UDP sockets (unlike asyncio where you still have to use Transports and\n    Protocols)\n\n* A versatile API for byte streams and object streams\n* Inter-task synchronization and communication (locks, conditions, events, semaphores, object\n  streams)\n* Worker threads\n* Subprocesses\n* Subinterpreter support for code parallelization (on Python 3.13 and later)\n* Asynchronous file I/O (using worker threads)\n* Signal handling\n* Asynchronous version of the functools_ module\n\nAnyIO also comes with its own pytest_ plugin which also supports asynchronous fixtures.\nIt even works with the popular Hypothesis_ library.\n\n.. _asyncio: https://docs.python.org/3/library/asyncio.html\n.. _Trio: https://github.com/python-trio/trio\n.. _structured concurrency: https://en.wikipedia.org/wiki/Structured_concurrency\n.. _nurseries: https://trio.readthedocs.io/en/stable/reference-core.html#nurseries-and-spawning\n.. _Happy eyeballs: https://en.wikipedia.org/wiki/Happy_Eyeballs\n.. _pytest: https://docs.pytest.org/en/latest/\n.. _functools: https://docs.python.org/3/library/functools.html\n.. _Hypothesis: https://hypothesis.works/\n\nSecurity contact information\n----------------------------\n\nTo report a security vulnerability, please use the `Tidelift security contact`_.\nTidelift will coordinate the fix and disclosure.\n\n.. _Tidelift security contact: https://tidelift.com/security\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Alex Grönholm <alex.gronholm@nextday.fi>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Framework :: AnyIO",
+          "Typing :: Typed",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_dist": [
+          "exceptiongroup>=1.0.2; python_version < \"3.11\"",
+          "idna>=2.8",
+          "typing_extensions>=4.5; python_version < \"3.13\"",
+          "trio>=0.32.0; extra == \"trio\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Documentation, https://anyio.readthedocs.io/en/latest/",
+          "Changelog, https://anyio.readthedocs.io/en/stable/versionhistory.html",
+          "Source code, https://github.com/agronholm/anyio",
+          "Issue tracker, https://github.com/agronholm/anyio/issues"
+        ],
+        "provides_extra": [
+          "trio"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/6c/3c/3f62dee257eb3d6b2c1ef2a09d36d9793c7111156a73b5654d2c2305e5ce/idna-3.14-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=e677eaf072e290f7b725f9acf0b3a2bd55f9fd6f7c70abe5f0e34823d0accf69",
+          "hashes": {
+            "sha256": "e677eaf072e290f7b725f9acf0b3a2bd55f9fd6f7c70abe5f0e34823d0accf69"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "idna",
+        "version": "3.14",
+        "summary": "Internationalized Domain Names in Applications (IDNA)",
+        "description": "Internationalized Domain Names in Applications (IDNA)\n=====================================================\n\nSupport for `Internationalized Domain Names in\nApplications (IDNA) <https://tools.ietf.org/html/rfc5891>`_\nand `Unicode IDNA Compatibility Processing\n<https://unicode.org/reports/tr46/>`_.\n\nThe latest versions of these standards supplied here provide\nmore comprehensive language coverage and reduce the potential of\nallowing domains with known security vulnerabilities. This library\nis a suitable replacement for the “encodings.idna”\nmodule that comes with the Python standard library, but which\nonly supports an older superseded IDNA specification from 2003.\n\nBasic functions are simply executed:\n\n.. code-block:: pycon\n\n    >>> import idna\n    >>> idna.encode('ドメイン.テスト')\n    b'xn--eckwd4c7c.xn--zckzah'\n    >>> print(idna.decode('xn--eckwd4c7c.xn--zckzah'))\n    ドメイン.テスト\n\n\nInstallation\n------------\n\nThis package is available for installation from PyPI via the\ntypical mechanisms, such as:\n\n.. code-block:: bash\n\n    $ python3 -m pip install idna\n\n\nUsage\n-----\n\nFor typical usage, the ``encode`` and ``decode`` functions will take a\ndomain name argument and perform a conversion to ASCII-compatible encoding\n(known as A-labels), or to Unicode strings (known as U-labels)\nrespectively.\n\n.. code-block:: pycon\n\n    >>> import idna\n    >>> idna.encode('ドメイン.テスト')\n    b'xn--eckwd4c7c.xn--zckzah'\n    >>> print(idna.decode('xn--eckwd4c7c.xn--zckzah'))\n    ドメイン.テスト\n\nConversions can be applied at a per-label basis using the ``ulabel`` or\n``alabel`` functions if necessary:\n\n.. code-block:: pycon\n\n    >>> idna.alabel('测试')\n    b'xn--0zwm56d'\n\n\nCompatibility Mapping (UTS #46)\n+++++++++++++++++++++++++++++++\n\nThis library provides support for `Unicode IDNA Compatibility\nProcessing <https://unicode.org/reports/tr46/>`_ which normalizes input from\ndifferent potential ways a user may input a domain prior to performing the IDNA\nconversion operations. This functionality, known as a \n`mapping <https://tools.ietf.org/html/rfc5895>`_, is considered by the\nspecification to be a local user-interface issue distinct from IDNA\nconversion functionality.\n\nFor example, “Königsgäßchen” is not a permissible label as *LATIN\nCAPITAL LETTER K* is not allowed (nor are capital letters in general).\nUTS 46 will convert this into lower case prior to applying the IDNA\nconversion.\n\n.. code-block:: pycon\n\n    >>> import idna\n    >>> idna.encode('Königsgäßchen')\n    ...\n    idna.core.InvalidCodepoint: Codepoint U+004B at position 1 of 'Königsgäßchen' not allowed\n    >>> idna.encode('Königsgäßchen', uts46=True)\n    b'xn--knigsgchen-b4a3dun'\n    >>> print(idna.decode('xn--knigsgchen-b4a3dun'))\n    königsgäßchen\n\n\nExceptions\n----------\n\nAll errors raised during the conversion following the specification\nshould raise an exception derived from the ``idna.IDNAError`` base\nclass.\n\nMore specific exceptions that may be generated as ``idna.IDNABidiError``\nwhen the error reflects an illegal combination of left-to-right and\nright-to-left characters in a label; ``idna.InvalidCodepoint`` when\na specific codepoint is an illegal character in an IDN label (i.e.\nINVALID); and ``idna.InvalidCodepointContext`` when the codepoint is\nillegal based on its position in the string (i.e. it is CONTEXTO or CONTEXTJ\nbut the contextual requirements are not satisfied.)\n\nBuilding and Diagnostics\n------------------------\n\nThe IDNA and UTS 46 functionality relies upon pre-calculated lookup\ntables for performance. These tables are derived from computing against\neligibility criteria in the respective standards using the command-line\nscript ``tools/idna-data``.\n\nThis tool will fetch relevant codepoint data from the Unicode repository\nand perform the required calculations to identify eligibility. There are\nthree main modes:\n\n* ``idna-data make-libdata``. Generates ``idnadata.py`` and\n  ``uts46data.py``, the pre-calculated lookup tables used for IDNA and\n  UTS 46 conversions. Implementers who wish to track this library against\n  a different Unicode version may use this tool to manually generate a\n  different version of the ``idnadata.py`` and ``uts46data.py`` files.\n\n* ``idna-data make-table``. Generate a table of the IDNA disposition\n  (e.g. PVALID, CONTEXTJ, CONTEXTO) in the format found in Appendix\n  B.1 of RFC 5892 and the pre-computed tables published by `IANA\n  <https://www.iana.org/>`_.\n\n* ``idna-data U+0061``. Prints debugging output on the various\n  properties associated with an individual Unicode codepoint (in this\n  case, U+0061), that are used to assess the IDNA and UTS 46 status of a\n  codepoint. This is helpful in debugging or analysis.\n\nThe tool accepts a number of arguments, described using ``idna-data -h``.\nMost notably, the ``--version`` argument allows the specification\nof the version of Unicode to be used in computing the table data. For\nexample, ``idna-data --version 9.0.0 make-libdata`` will generate\nlibrary data against Unicode 9.0.0.\n\n\nAdditional Notes\n----------------\n\n* **Packages**. The latest tagged release version is published in the\n  `Python Package Index <https://pypi.org/project/idna/>`_.\n\n* **Version support**. This library supports Python 3.8 and higher.\n  As this library serves as a low-level toolkit for a variety of\n  applications, many of which strive for broad compatibility with older\n  Python versions, there is no rush to remove older interpreter support.\n  Support for older versions are likely to be removed from new releases\n  as automated tests can no longer easily be run, i.e. once the Python\n  version is officially end-of-life.\n\n* **Testing**. The library has a test suite based on each rule of the\n  IDNA specification, as well as tests that are provided as part of the\n  Unicode Technical Standard 46, `Unicode IDNA Compatibility Processing\n  <https://unicode.org/reports/tr46/>`_.\n\n* **Emoji**. It is an occasional request to support emoji domains in\n  this library. Encoding of symbols like emoji is expressly prohibited by\n  the IDNA technical standard, and emoji domains are broadly phased\n  out across the domain industry due to associated security risks.\n\n* **Transitional processing**. Unicode 16.0.0 removed transitional\n  processing so the `transitional` argument for the encode() method\n  no longer has any effect and will be removed at a later date.\n\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Kim Davies <kim+pypi@gumleaf.org>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE.md"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: System Administrators",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Internet :: Name Service (DNS)",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Utilities"
+        ],
+        "requires_dist": [
+          "ruff >= 0.6.2 ; extra == \"all\"",
+          "mypy >= 1.11.2 ; extra == \"all\"",
+          "pytest >= 8.3.2 ; extra == \"all\""
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.rst",
+          "Issue tracker, https://github.com/kjd/idna/issues",
+          "Source, https://github.com/kjd/idna"
+        ],
+        "provides_extra": [
+          "all"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a",
+          "hashes": {
+            "sha256": "3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": false,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "certifi",
+        "version": "2026.4.22",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "project-url",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "Python package for providing Mozilla's CA Bundle.",
+        "description": "Certifi: Python SSL Certificates\n================================\n\nCertifi provides Mozilla's carefully curated collection of Root Certificates for\nvalidating the trustworthiness of SSL certificates while verifying the identity\nof TLS hosts. It has been extracted from the `Requests`_ project.\n\nInstallation\n------------\n\n``certifi`` is available on PyPI. Simply install it with ``pip``::\n\n    $ pip install certifi\n\nUsage\n-----\n\nTo reference the installed certificate authority (CA) bundle, you can use the\nbuilt-in function::\n\n    >>> import certifi\n\n    >>> certifi.where()\n    '/usr/local/lib/python3.7/site-packages/certifi/cacert.pem'\n\nOr from the command line::\n\n    $ python -m certifi\n    /usr/local/lib/python3.7/site-packages/certifi/cacert.pem\n\nEnjoy!\n\n.. _`Requests`: https://requests.readthedocs.io/en/master/\n\nAddition/Removal of Certificates\n--------------------------------\n\nCertifi does not support any addition/removal or other modification of the\nCA trust store content. This project is intended to provide a reliable and\nhighly portable root of trust to python deployments. Look to upstream projects\nfor methods to use alternate trust.\n",
+        "home_page": "https://github.com/certifi/python-certifi",
+        "author": "Kenneth Reitz",
+        "author_email": "me@kennethreitz.com",
+        "license": "MPL-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+          "Natural Language :: English",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Source, https://github.com/certifi/python-certifi"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.13.5",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "6.14.0-37-generic",
+    "platform_system": "Linux",
+    "platform_version": "#37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2",
+    "python_full_version": "3.13.5",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.13",
+    "sys_platform": "linux"
+  }
+}
