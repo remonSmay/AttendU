@@ -62,14 +62,15 @@ FIXME
 """
 sudo lsof -i tcp:5432
 sudo kill -9 2795
+hostname -I
 """
 """
-TODO (5/7)[]:i 
-                i first show the session active -> then i want mange the session by closed the session 
-                2 - i want when the session time out -> close  
-                3- history page : not's appear the section id and session id , and appear who attend in each session check that on backend and  frontend  
-                4- in /student page : when click the student show the window for show the details has student also show the history of attendance 
-                5- i want mange the application by telegram bot , each instructor has the own bot telegram and the instructor mange that through that , 
+TODO(5/7)[]:i 
+                [] i first show the session active -> then i want mange the session by closed the session 
+                [] 2 - i want when the session time out -> close  
+                [] 3- history page : not's appear the section id and session id , and appear who attend in each session check that on backend and  frontend  
+                [] 4- in /student page : when click the student show the window for show the details has student also show the history of attendance 
+                [] 5- i want mange the application by telegram bot , each instructor has the own bot telegram and the instructor mange that through that , 
                     - /start - > for start deal with app - show the /auth for authentication 
                     - /auth  -> write the password for auth 
                     -/list_course - show all course own this instructor

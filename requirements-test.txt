@@ -1,0 +1,33 @@
+# Test Dependencies - pinned to match production versions where applicable
+# Core Testing Framework
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-mock==3.14.0
+pytest-cov==4.1.0
+
+# HTTP Client for API Testing
+httpx==0.27.0
+
+# Test Data Generation
+factory-boy==3.3.0
+faker==24.3.0
+
+# Async SQLite Support
+aiosqlite==0.22.1
+
+# Production Dependencies (from src/requirements.txt)
+fastapi==0.128.0
+uvicorn[standard]==0.40.0
+pydantic-settings==2.12.0
+email-validator==2.2.0
+python-dotenv==1.2.1
+python-jose[cryptography]==3.5.0
+passlib[argon2,bcrypt]==1.7.4
+python-multipart==0.0.20
+sqlalchemy==2.0.45
+asyncpg==0.31.0
+psycopg2-binary==2.9.11
+alembic==1.17.2
+openpyxl==3.1.5
+reportlab==4.2.5
+setuptools<81

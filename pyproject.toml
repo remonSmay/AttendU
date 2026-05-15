@@ -1,7 +1,7 @@
 [project]
-name = "repl-nix-workspace"
+name = "AttendU"
 version = "0.1.0"
-description = "Add your description here"
+description = "Attendance tracking system with face recognition and RFID"
 requires-python = ">=3.12"
 dependencies = [
     "alembic==1.17.2",
@@ -19,3 +19,85 @@ dependencies = [
     "sqlalchemy==2.0.45",
     "uvicorn[standard]==0.40.0",
 ]
+
+[project.optional-dependencies]
+test = [
+    "pytest==7.4.4",
+    "pytest-asyncio==0.23.3",
+    "pytest-mock==3.14.0",
+    "pytest-cov==4.1.0",
+    "httpx==0.27.0",
+    "factory-boy==3.3.0",
+    "faker==24.3.0",
+]
+
+dev = [
+    "black==24.1.1",
+    "ruff==0.2.1",
+    "mypy==1.8.0",
+]
+
+[tool.pytest.ini_options]
+# Asyncio Configuration
+asyncio_mode = "auto"
+
+# Test Discovery
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+# Output Options
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "--disable-warnings",
+]
+
+# Coverage Configuration
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/site-packages/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+skip_covered = false
+precision = 2
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+# Markers
+[tool.pytest.ini_options.markers]
+asyncio = "marks tests as async (deselect with '-m \"not asyncio\"')"
+unit = "marks tests as unit tests"
+integration = "marks tests as integration tests"
+slow = "marks tests as slow running"
+smoke = "marks tests as smoke tests"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
